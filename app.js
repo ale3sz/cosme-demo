@@ -732,4 +732,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // =========================================================================
+  // 13. BOTTOM SHEET DE NAVEGACIÓN MÓVIL (SECCIONES)
+  // =========================================================================
+  const mobileSheetBtn = document.getElementById('mobile-nav-sheet-btn');
+  const mobileSheet = document.getElementById('mobile-nav-sheet');
+
+  if (mobileSheetBtn && mobileSheet) {
+    const closeSheet = () => {
+      mobileSheet.classList.remove('is-open');
+      mobileSheet.setAttribute('aria-hidden', 'true');
+      mobileSheetBtn.setAttribute('aria-expanded', 'false');
+    };
+
+    const toggleSheet = () => {
+      const isOpen = mobileSheet.classList.toggle('is-open');
+      mobileSheet.setAttribute('aria-hidden', String(!isOpen));
+      mobileSheetBtn.setAttribute('aria-expanded', String(isOpen));
+    };
+
+    mobileSheetBtn.addEventListener('click', toggleSheet);
+    mobileSheet.querySelectorAll('[data-close-sheet]').forEach(el => {
+      el.addEventListener('click', closeSheet);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileSheet.classList.contains('is-open')) {
+        closeSheet();
+      }
+    });
+  }
+
 });
