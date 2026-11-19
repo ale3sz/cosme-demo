@@ -408,26 +408,26 @@ document.addEventListener('DOMContentLoaded', () => {
       case 'reservar_mesa':
       case 'reserva':
       case 'mesa_amigos':
-        message = 'Reservar 🗓️';
+        message = 'Reservar';
         break;
       case 'cumpleanos':
       case 'festejos':
-        message = 'Consultar Promos de Cumple 🎁';
+        message = 'Consultar Promos de Cumple';
         break;
       case 'delivery':
-        message = 'Hacer un pedido Delivery 🛵';
+        message = 'Hacer un pedido Delivery';
         break;
       case 'take_away':
-        message = 'Hacer un pedido Take Away 🥡🍻';
+        message = 'Hacer un pedido Take Away';
         break;
       case 'eventos':
-        message = 'Eventos 🎟️';
+        message = 'Eventos';
         break;
       case 'carta':
-        message = 'Carta / Menú 📖';
+        message = 'Carta / Menú';
         break;
       case 'consultas':
-        message = 'Consultas / Reclamos 🤫';
+        message = 'Consultas / Reclamos';
         break;
       case 'salon_cosme':
         message = 'Quiero consultar el salón COSME +';
