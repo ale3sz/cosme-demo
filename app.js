@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (lunchCtaBtn) {
     lunchCtaBtn.addEventListener('click', () => {
       const { dish, drink, dessert } = getLunchSelections();
-      const msg = `¡Hola Cosme! â˜€ï¸ Quiero pedir / reservar para el Almuerzo Ejecutivo:\n- Principal: *${dish}*\n- Bebida: *${drink}*\n- Cierre: *${dessert}*\n¿A qué hora tienen mesa o para retirar?`;
+      const msg = `¡Hola Cosme! Quiero pedir / reservar para el Almuerzo Ejecutivo:\n- Principal: *${dish}*\n- Bebida: *${drink}*\n- Cierre: *${dessert}*\n¿A qué hora tienen mesa o para retirar?`;
       window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
     });
   }
