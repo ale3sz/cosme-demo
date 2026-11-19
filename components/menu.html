@@ -1,0 +1,48 @@
+<section id="menu" class="menu-section scroll-reveal">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Gastronomía &amp; Cervecería</span>
+          <h2 class="section-heading">CARTAS &amp; CANILLAS</h2>
+          <p class="hero-subtitle">
+            Cocina de bodegón con porciones para compartir y 12 canillas de cerveza artesanal tiradas en copón enfriado.
+          </p>
+        </div>
+
+        <!-- Botones de Modo para la carta (Noche / Canillas / Día) -->
+        <div class="menu-mode-tabs">
+          <button class="menu-mode-tab active" data-menu-target="night">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg> Carta Nocturna (Bodegón &amp; Pub)
+          </button>
+          <button class="menu-mode-tab" data-menu-target="taps">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M17 11h1a3 3 0 0 1 0 6h-1"/><path d="M9 12v6"/><path d="M13 12v6"/><path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 3 11 3s2 .5 3 .5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"/><path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg> Canillas Tiradas (12 Taps en Vivo)
+          </button>
+          <button class="menu-mode-tab" data-menu-target="day">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg> Carta Diurna (Cafetería &amp; Almuerzos)
+          </button>
+        </div>
+
+        <!-- Filtros de decisión rápida (CRO: reduce fricción de exploración) -->
+        <div class="menu-quick-filters" id="menu-quick-filters">
+          <button class="filter-pill active" data-filter="all">Todos los platos</button>
+          <button class="filter-pill" data-filter="destacados">⭐ Lo más pedido</button>
+          <button class="filter-pill" data-filter="grupos">👥 Tablas &amp; Grupos</button>
+          <button class="filter-pill" data-filter="sintacc">🌾 Opción Sin TACC</button>
+          <button class="filter-pill" data-filter="veggie">🥑 Veggie</button>
+        </div>
+
+        <!-- Header Especial Diurno con Mascota Cosme Verde -->
+        <!-- @include:components/menu/diurnal-banner.html -->
+
+        <!-- 12 Canillas Tiradas en Vivo -->
+        <!-- @include:components/menu/taps-board.html -->
+
+        <!-- Sugeridor Interactivo de Almuerzo Ejecutivo -->
+        <!-- @include:components/menu/lunch-suggester.html -->
+
+        <!-- Grilla de Platos (Nocturnos & Diurnos con filtros) -->
+        <!-- @include:components/menu/dishes-grid.html -->
+
+        <!-- Barra inferior para descargar cartas oficiales en PDF -->
+        <!-- @include:components/menu/menu-footer.html -->
+      </div>
+    </section>

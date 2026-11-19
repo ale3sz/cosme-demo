@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "build:html": "python scripts/build_html.py",
+    "watch:html": "python scripts/build_html.py --watch"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.9",

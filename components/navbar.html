@@ -1,0 +1,36 @@
+<header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#inicio" class="brand-logo" aria-label="Volver al inicio">
+        <!-- Logo Noche: Mascota Cosme en Ámbar Dorado -->
+        <img src="assets/cosme-mascot-amber.png" alt="Mascota Cosme Alberdi" class="nav-logo-night" width="44" height="44">
+        <!-- Logo Día: Wordmark Cosme en Negro Vintage -->
+        <img src="assets/cosme-wordmark-black.png" alt="Logo Cosme Alberdi" class="nav-logo-day" height="32">
+        <div class="brand-title nav-brand-text">
+          <span>COSME</span>
+          <span class="brand-sub">ALBERDI · ROSARIO</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#inicio" class="active">Inicio</a>
+        <a href="#menu">Cartas &amp; Canillas</a>
+        <a href="#resenas">Opiniones</a>
+        <a href="#festejos">Reservas &amp; Festejos</a>
+        <a href="#ubicacion">Ubicación</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Switch Minimalista Día / Noche (Shadcn UI Style) -->
+        <button id="theme-toggle-btn" class="theme-switch" role="switch" aria-label="Cambiar entre Modo Noche y Día" title="Modo Día / Noche">
+          <span class="switch-thumb">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          </span>
+        </button>
+
+        <button class="btn-nav-reserve" data-open-modal="reserva">
+          Reservar Mesa
+        </button>
+      </div>
+    </div>
+  </header>

@@ -2,22 +2,27 @@
 <html lang="es" data-theme="night">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" id="theme-color-meta" content="#0C0D10">
-  <title>Cosme Alberdi — Pub, Restaurante &amp; Cervecería | Bv. Rondeau 1602, Rosario</title>
-  <meta name="description" content="Cosme Alberdi en Boulevard Rondeau 1602, Rosario. Punto de encuentro gastronómico con cocina de bodegón abundante, cafetería de especialidad, cervecería artesanal y noches de pub.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Cosme Alberdi · Gastrobar, Café de Especialidad & Cervecería | Rosario</title>
+  <meta name="description" content="El clásico de Bv. Rondeau. Bodegón con porciones desbordantes para compartir, 12 canillas de cerveza tirada, cafetería de especialidad y la mística de Zona Norte.">
+  <meta id="theme-color-meta" name="theme-color" content="#0C0D10">
 
-  <!-- Tipografías de Google Fonts -->
+  <!-- Favicon Oficial -->
+  <link rel="icon" type="image/png" href="assets/cosme-mascot-amber.png">
+  <link rel="apple-touch-icon" href="assets/cosme-mascot-amber.png">
+
+  <!-- Estilos Globales -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Fonts: Bebas Neue, Space Grotesk, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- =====================================================================
-       1. BARRA DE NAVEGACIÓN PRINCIPAL
+       1. BARRA DE NAVEGACIÓN
        ===================================================================== -->
   <header class="navbar">
     <div class="container navbar-inner">
@@ -56,12 +61,12 @@
     </div>
   </header>
 
+  <!-- =====================================================================
+       CONTENIDO PRINCIPAL
+       ===================================================================== -->
   <main id="inicio">
-
-    <!-- =====================================================================
-         2. HERO SECTION
-         ===================================================================== -->
-    <section class="hero">
+    <!-- 2. Hero Section -->
+    <section id="hero" class="hero">
       <div class="container hero-content">
         <a href="https://maps.google.com/?q=Pub+y+Restaurante+Cosme+Alberdi" target="_blank" rel="noopener noreferrer" class="badge-location badge-location--interactive" title="Tocá para abrir indicaciones en Google Maps">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
@@ -103,9 +108,7 @@
       </div>
     </section>
 
-    <!-- =====================================================================
-         3. MENÚ DE TARJETITAS DE NAVEGACIÓN RÁPIDA (ACCESO A CADA SECCIÓN)
-         ===================================================================== -->
+    <!-- 3. Menú de Tarjetitas de Navegación Rápida -->
     <section id="accesos-secciones" class="quick-nav-section" aria-label="Menú de acceso rápido a secciones">
       <div class="container">
         <div class="quick-nav-header">
@@ -228,12 +231,7 @@
       </div>
     </section>
 
-
-    
-
-    <!-- =====================================================================
-         4. SECCIÓN CARTAS & CANILLAS (PROPUESTA GASTRONÓMICA UNIFICADA)
-         ===================================================================== -->
+    <!-- 4. Sección Cartas & Canillas (Día / Noche / Taps) -->
     <section id="menu" class="menu-section scroll-reveal">
       <div class="container">
         <div class="section-head">
@@ -244,7 +242,7 @@
           </p>
         </div>
 
-        <!-- Botones de Modo para la carta -->
+        <!-- Botones de Modo para la carta (Noche / Canillas / Día) -->
         <div class="menu-mode-tabs">
           <button class="menu-mode-tab active" data-menu-target="night">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg> Carta Nocturna (Bodegón &amp; Pub)
@@ -288,7 +286,7 @@
           </div>
         </div>
 
-        <!-- 12 Canillas Tiradas (Tab 'taps') -->
+        <!-- 12 Canillas Tiradas en Vivo -->
         <div id="canillas" class="taps-board" style="display:none; margin-top:28px;">
           <div class="taps-header">
             <div class="taps-title-box">
@@ -574,7 +572,7 @@
           </div>
         </div>
 
-        <!-- Sugeridor Interactivo de Almuerzo Ejecutivo (Visible en Modo Día) -->
+        <!-- Sugeridor Interactivo de Almuerzo Ejecutivo -->
         <div id="lunch-suggester-box" class="lunch-suggester scroll-reveal" style="display:none;">
           <div class="lunch-suggester-head">
             <div class="lunch-suggester-title">
@@ -621,7 +619,7 @@
           </div>
         </div>
 
-        <!-- Grid de Platos -->
+        <!-- Grilla de Platos (Nocturnos & Diurnos con filtros) -->
         <div class="menu-grid">
           
           <!-- PLATOS NOCTURNOS -->
@@ -858,26 +856,22 @@
 
         </div>
 
-        <!-- Barra inferior para descargar o ver en Drive -->
+        <!-- Barra inferior para descargar cartas oficiales en PDF -->
         <div class="menu-footer-bar">
-          <p>¿Buscás la lista completa con precios detallados, opciones sin TACC, coctelería y pastelería?</p>
-          <div class="menu-actions">
-            <button class="btn-carta-pdf" data-open-pdf="noche">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> Ver Carta Noche &amp; Salón (PDF)
-            </button>
-            <button class="btn-carta-pdf" data-open-pdf="dia" style="border-color: rgba(255, 170, 0, 0.4); background: rgba(255, 170, 0, 0.08);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/></svg> Ver Desayunos &amp; Meriendas (PDF)
-            </button>
-          </div>
-        </div>
-
+  <p>¿Buscás la lista completa con precios detallados, opciones sin TACC, coctelería y pastelería?</p>
+  <div class="menu-actions">
+    <button class="btn-carta-pdf" data-open-pdf="noche">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> Ver Carta Noche &amp; Salón (PDF)
+    </button>
+    <button class="btn-carta-pdf" data-open-pdf="dia" style="border-color: rgba(255, 170, 0, 0.4); background: rgba(255, 170, 0, 0.08);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/></svg> Ver Desayunos &amp; Meriendas (PDF)
+    </button>
+  </div>
+</div>
       </div>
     </section>
 
-
-    <!-- =====================================================================
-         6. SECCIÓN PRUEBA SOCIAL & COMUNIDAD (RESEÑAS VERIFICADAS)
-         ===================================================================== -->
+    <!-- 5. Reseñas Verificadas -->
     <section id="resenas" class="resenas-section scroll-reveal">
       <div class="container">
         <div class="section-head">
@@ -986,9 +980,7 @@
       </div>
     </section>
 
-    <!-- =====================================================================
-         5. RESERVAS & FESTEJOS
-         ===================================================================== -->
+    <!-- 6. Reservas & Festejos de Cumpleaños -->
     <section id="festejos" class="festejos-section scroll-reveal">
       <div class="container">
         <div class="festejos-box">
@@ -1048,9 +1040,7 @@
       </div>
     </section>
 
-    <!-- =====================================================================
-         6. UBICACIÓN Y MAPA INTERACTIVO
-         ===================================================================== -->
+    <!-- 7. Ubicación y Mapa Interactivo -->
     <section id="ubicacion" class="ubicacion-section">
       <div class="container">
         <div class="section-head">
@@ -1108,11 +1098,10 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- =====================================================================
-       8. FOOTER
+       8. FOOTER INSTITUCIONAL
        ===================================================================== -->
   <footer class="site-footer">
     <div class="container">
@@ -1167,8 +1156,9 @@
   </footer>
 
   <!-- =====================================================================
-       9. WIDGET FLOTANTE DE WHATSAPP
+       COMPONENTES FLOTANTES & MODALES
        ===================================================================== -->
+  <!-- 9. Widget Flotante de WhatsApp -->
   <div class="floating-whatsapp">
     <div id="floating-wa-menu" class="floating-wa-menu">
       <div class="wa-menu-title">¿Qué necesitás consultar?</div>
@@ -1193,9 +1183,7 @@
     </button>
   </div>
 
-  <!-- =====================================================================
-       10. MODAL: FORMULARIO RÁPIDO DE RESERVA
-       ===================================================================== -->
+  <!-- 10. Modal Formulario Rápido de Reserva -->
   <div id="modal-reserva" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-res-title">
     <div class="modal-window">
       <button class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
@@ -1261,9 +1249,7 @@
     </div>
   </div>
 
-  <!-- =====================================================================
-       11. MODAL: VISOR DE CARTA DIGITAL IN-PAGE
-       ===================================================================== -->
+  <!-- 11. Modal Visor de Carta Digital PDF -->
   <div id="modal-carta" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-carta-title">
     <div class="modal-window modal-window-pdf">
       <!-- Modal Header -->
@@ -1313,9 +1299,7 @@
     </div>
   </div>
 
-  <!-- =====================================================================
-       12. BARRA FIJA MÓVIL EN LA ZONA DEL PULGAR (STICKY BOTTOM BAR - CRO)
-       ===================================================================== -->
+  <!-- 12. Barra Fija Móvil CRO (Zona del Pulgar) -->
   <nav class="mobile-sticky-bar" aria-label="Acciones rápidas móviles de conversión">
     <a href="#menu" class="sticky-bar-btn sticky-bar-btn--secondary">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
@@ -1335,7 +1319,7 @@
     </a>
   </nav>
 
+  <!-- Script Principal de Interacción -->
   <script src="app.js"></script>
-
 </body>
 </html>

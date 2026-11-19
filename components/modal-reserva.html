@@ -1,0 +1,64 @@
+<div id="modal-reserva" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-res-title">
+    <div class="modal-window">
+      <button class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+      <h3 id="modal-res-title" class="modal-title">RESERVAR MESA</h3>
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">
+        Elegí tu horario de llegada preferido y disfrutá la mesa sin turnos ni apuros. Te derivamos a WhatsApp para confirmar al instante.
+      </p>
+
+      <form id="form-modal-reserva">
+        <div class="form-group">
+          <label for="res-nombre" class="form-label">Tu Nombre y Apellido:</label>
+          <input type="text" id="res-nombre" class="form-input" placeholder="Ej: Santiago Pérez" required>
+        </div>
+
+        <div class="form-group">
+          <label for="res-personas" class="form-label">Cantidad de personas:</label>
+          <select id="res-personas" class="form-select">
+            <option value="2 personas">2 personas</option>
+            <option value="3 a 4 personas" selected>3 a 4 personas</option>
+            <option value="5 a 8 personas">5 a 8 personas</option>
+            <option value="Más de 8 personas">Más de 8 personas (Grupo)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="res-fecha" class="form-label">Fecha deseada:</label>
+          <input type="date" id="res-fecha" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="res-horario" class="form-label">Horario deseado de llegada:</label>
+          <select id="res-horario" class="form-select">
+            <optgroup label="Almuerzo">
+              <option value="12:30 hs">12:30 hs</option>
+              <option value="13:00 hs">13:00 hs</option>
+              <option value="13:30 hs">13:30 hs</option>
+              <option value="14:00 hs">14:00 hs</option>
+              <option value="14:30 hs">14:30 hs</option>
+            </optgroup>
+            <optgroup label="Tarde / Merienda">
+              <option value="17:00 hs">17:00 hs</option>
+              <option value="18:00 hs">18:00 hs</option>
+              <option value="19:00 hs">19:00 hs</option>
+              <option value="20:00 hs">20:00 hs</option>
+            </optgroup>
+            <optgroup label="Cena / Noche">
+              <option value="20:30 hs">20:30 hs</option>
+              <option value="21:00 hs" selected>21:00 hs</option>
+              <option value="21:30 hs">21:30 hs</option>
+              <option value="22:00 hs">22:00 hs</option>
+              <option value="22:30 hs">22:30 hs</option>
+              <option value="23:00 hs">23:00 hs</option>
+              <option value="23:30 hs">23:30 hs</option>
+              <option value="00:00 hs en adelante">00:00 hs en adelante</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-submit-modal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon" fill="currentColor" stroke="none"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c.969.531 1.771.82 2.806.82 3.18 0 5.767-2.587 5.767-5.766.001-3.181-2.585-5.767-5.767-5.767zm7.969 5.766c-.003 4.418-3.586 8.002-8 8.002-1.398 0-2.709-.364-3.847-1.002l-4.153 1.089 1.109-4.047c-.718-1.205-1.109-2.587-1.109-4.042.003-4.418 3.586-8.002 8-8.002 4.417.001 8 3.585 8 8.002z"/></svg> Confirmar Reserva por WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>

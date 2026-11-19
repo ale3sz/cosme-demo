@@ -1,0 +1,284 @@
+<div id="canillas" class="taps-board" style="display:none; margin-top:28px;">
+          <div class="taps-header">
+            <div class="taps-title-box">
+              <div class="taps-icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M17 11h1a3 3 0 0 1 0 6h-1"/><path d="M9 12v6"/><path d="M13 12v6"/><path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 3 11 3s2 .5 3 .5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"/><path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg></div>
+              <div>
+                <h3>PIZARRA DE CANILLAS EN VIVO</h3>
+                <span style="font-size:0.85rem; color:var(--text-muted);">Cerveza artesanal tirada a 2°C en copón enfriado</span>
+              </div>
+            </div>
+            <div class="taps-live-badge">
+              <span class="pulse-dot" style="background:#59bd95; width:8px; height:8px;"></span>
+              <span>12 CANILLAS ACTIVAS HOY</span>
+            </div>
+          </div>
+
+          <!-- Filtros rápidos por paladar -->
+          <div class="tap-palate-filters" role="group" aria-label="Filtrar canillas por paladar">
+            <button type="button" class="tap-filter-chip active" data-palate="all">Todas (12)</button>
+            <button type="button" class="tap-filter-chip" data-palate="suaves">Suaves &amp; Rubias</button>
+            <button type="button" class="tap-filter-chip" data-palate="lupuladas">Lupuladas (IPA/APA)</button>
+            <button type="button" class="tap-filter-chip" data-palate="rojas-negras">Rojas &amp; Negras</button>
+            <button type="button" class="tap-filter-chip" data-palate="frutales">Frutales &amp; Rotativa</button>
+          </div>
+
+          <div class="taps-board-list">
+            <div class="tap-row" data-palate-item="lupuladas" data-beer-name="IPA Alberdi" data-beer-style="India Pale Ale" style="--srm-color:#e5951a; --srm-glow:rgba(229, 149, 26, 0.45);">
+              <div class="tap-row-num">01</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">IPA Alberdi</h4>
+                  <span class="tap-row-style">Lupulada & Aromática</span>
+                </div>
+                <p class="tap-row-desc">Explosión de lúpulos patagónicos con notas a pomelo rosado, pino y resina. Amargor marcado y persistente.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>6.2%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>55</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:80%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.500</span>
+                <button type="button" class="tap-row-btn" data-order-beer="IPA Alberdi" data-order-style="India Pale Ale">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="suaves" data-beer-name="Honey de la Isla" data-beer-style="Honey Ale" style="--srm-color:#f5c042; --srm-glow:rgba(245, 192, 66, 0.45);">
+              <div class="tap-row-num">02</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Honey de la Isla</h4>
+                  <span class="tap-row-style">Suave & Dulce Natural</span>
+                </div>
+                <p class="tap-row-desc">Miel pura de monte de las islas del Paraná. Suavidad maltosa con final dulce y refrescante.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>5.0%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>18</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:26%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.200</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Honey de la Isla" data-order-style="Honey Ale">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="rojas-negras" data-beer-name="Scottish Heavy" data-beer-style="Scottish Export" style="--srm-color:#c85232; --srm-glow:rgba(200, 82, 50, 0.45);">
+              <div class="tap-row-num">03</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Scottish Heavy</h4>
+                  <span class="tap-row-style">Caramelo & Malta Roja</span>
+                </div>
+                <p class="tap-row-desc">Notas profundas a toffee, frutos secos y corteza de pan horneado. Cuerpo sedoso y calidez en boca.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>5.5%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>22</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:34%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.200</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Scottish Heavy" data-order-style="Scottish Export">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="suaves" data-beer-name="Golden Pampeana" data-beer-style="Golden Ale" style="--srm-color:#eab938; --srm-glow:rgba(234, 185, 56, 0.45);">
+              <div class="tap-row-num">04</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Golden Pampeana</h4>
+                  <span class="tap-row-style">Dorada & Refrescante</span>
+                </div>
+                <p class="tap-row-desc">Cerveza rubia de trago ágil, espuma blanca cremosa y final limpio. La compañera perfecta para arrancar.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>4.8%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>15</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:22%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.000</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Golden Pampeana" data-order-style="Golden Ale">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="lupuladas" data-beer-name="APA del Bulevar" data-beer-style="American Pale Ale" style="--srm-color:#df8720; --srm-glow:rgba(223, 135, 32, 0.45);">
+              <div class="tap-row-num">05</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">APA del Bulevar</h4>
+                  <span class="tap-row-style">Cítricos & Amargor Medio</span>
+                </div>
+                <p class="tap-row-desc">Equilibrio redondo entre malta cristal y lúpulos americanos. Aromas a mango, maracuyá y cáscara de naranja.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>5.2%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>38</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:56%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.400</span>
+                <button type="button" class="tap-row-btn" data-order-beer="APA del Bulevar" data-order-style="American Pale Ale">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="rojas-negras" data-beer-name="Stout Café Cosme" data-beer-style="Stout Imperial" style="--srm-color:#b0744f; --srm-glow:rgba(176, 116, 79, 0.45);">
+              <div class="tap-row-num">06</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Stout Café Cosme</h4>
+                  <span class="tap-row-style">Tostada & Cacao Puro</span>
+                </div>
+                <p class="tap-row-desc">Infusionada en frío con café de especialidad de nuestro salón. Notas a chocolate amargo y crema moka.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>7.0%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>32</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:48%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.600</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Stout Café Cosme" data-order-style="Stout Imperial">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="lupuladas" data-beer-name="Session IPA Verano" data-beer-style="Session IPA" style="--srm-color:#59bd95; --srm-glow:rgba(89, 189, 149, 0.45);">
+              <div class="tap-row-num">07</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Session IPA Verano</h4>
+                  <span class="tap-row-style">Ultra Tomable & Aromas</span>
+                </div>
+                <p class="tap-row-desc">Bajo alcohol, máxima frescura. Aromas intensos a frutas tropicales sin saturar el paladar.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>4.2%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>40</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:60%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.300</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Session IPA Verano" data-order-style="Session IPA">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="frutales" data-beer-name="Canilla Rotativa" data-beer-style="Especial Invitada" style="--srm-color:#ff3b43; --srm-glow:rgba(255, 59, 67, 0.45);">
+              <div class="tap-row-num">08</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Canilla Rotativa</h4>
+                  <span class="tap-row-style">Edición Limitada</span>
+                </div>
+                <p class="tap-row-desc">Barril especial de productores invitados de Rosario y la región. Consultá qué estilo pinchamos hoy.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>6.5%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>Esp.</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:68%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.800</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Canilla Rotativa" data-order-style="Especial Invitada">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="rojas-negras" data-beer-name="Irish Red Alberdi" data-beer-style="Irish Red Ale" style="--srm-color:#c93b2b; --srm-glow:rgba(201, 59, 43, 0.45);">
+              <div class="tap-row-num">09</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Irish Red Alberdi</h4>
+                  <span class="tap-row-style">Malta Caramelo</span>
+                </div>
+                <p class="tap-row-desc">Cerveza roja con perfil a maltas caramelo tostadas, toque de toffee y final limpio muy fácil de tomar.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>5.2%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>22</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:34%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.200</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Irish Red Alberdi" data-order-style="Irish Red Ale">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="suaves" data-beer-name="Trigo Cítrico Belga" data-beer-style="Witbier" style="--srm-color:#f3cf65; --srm-glow:rgba(243, 207, 101, 0.45);">
+              <div class="tap-row-num">10</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Trigo Cítrico Belga</h4>
+                  <span class="tap-row-style">Trigo & Naranja</span>
+                </div>
+                <p class="tap-row-desc">Cerveza de trigo turbia y sedosa, aromatizada con coriandro y cáscara de naranja amarga. Ideal tardes cálidas.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>4.8%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>15</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:22%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.300</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Trigo Cítrico Belga" data-order-style="Witbier">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="rojas-negras" data-beer-name="Robust Porter Cacao" data-beer-style="Porter" style="--srm-color:#9b6442; --srm-glow:rgba(155, 100, 66, 0.45);">
+              <div class="tap-row-num">11</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Robust Porter Cacao</h4>
+                  <span class="tap-row-style">Chocolate & Tostado</span>
+                </div>
+                <p class="tap-row-desc">Cerveza negra con notas de nibs de cacao, malta tostada y final aterciopelado. Excelente con bondiola.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>5.8%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>28</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:42%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.400</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Robust Porter Cacao" data-order-style="Porter">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="frutales" data-beer-name="Catharina Sour Frutos Rojos" data-beer-style="Sour Frutal" style="--srm-color:#e03568; --srm-glow:rgba(224, 53, 104, 0.45);">
+              <div class="tap-row-num">12</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Catharina Sour Frutos Rojos</h4>
+                  <span class="tap-row-style">Acidez & Fruta</span>
+                </div>
+                <p class="tap-row-desc">Estilo acidulado y refrescante fermentado con pulpa natural de frambuesas y moras. Explosión frutal pura.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>4.5%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>8</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:14%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.500</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Catharina Sour Frutos Rojos" data-order-style="Sour Frutal">Pedir &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="taps-board-footer">
+            <span>★ ESPACIO PARA CONDICIONES REALES DE BARRA (EJ: RECARGA DE GROWLER / PINTAS)</span>
+            <span>ESPACIO PARA PROMO VIGENTE O HAPPY HOUR</span>
+          </div>
+        </div>
