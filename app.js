@@ -446,21 +446,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function getGroupPerks(val) {
     if (val < 10) {
       return {
-        benefit: '¡1 Botella de espumante de regalo + Mesa unificada!',
-        details: 'Sector preferencial para arrancar la noche. Servicio de vajilla y corte de torta sin costo adicional.',
-        package: 'Carta abierta o Tablas para compartir ("La Previa de Rondeau")'
+        benefit: 'Propuesta para grupos chicos (hasta 9 personas)',
+        details: '[Espacio para cargar beneficios, mesas unificadas o cortesías reales que el local ofrezca para este tamaño de grupo.]',
+        package: 'Ej: Carta abierta, tablas para compartir o menú sugerido por el local'
       };
     } else if (val < 20) {
       return {
-        benefit: '¡2 Botellas de espumante + Paquete Comida Libre opcional!',
-        details: 'Sector semi-exclusivo, DJ en vivo el fin de semana y opción de Comida Libre de pizzas caseras, papas cheddar y sándwiches.',
-        package: 'Paquete Comida Libre (Pizzas, Papas Cheddar y Carlitos)'
+        benefit: 'Propuesta para grupos medianos (10 a 19 personas)',
+        details: '[Espacio para detallar opciones reales de menú grupal, combos de comida/bebida o condiciones de reserva de sector.]',
+        package: 'Ej: Menú fijo por persona o combo grupal definido por el local'
       };
     } else {
       return {
-        benefit: '¡3 Botellas de espumante + Sector exclusivo + Cotillón LED!',
-        details: 'Espacio exclusivo con camarero dedicado, bienvenida especial, mención en cabina de DJ y cotillón festivo.',
-        package: 'Paquete Cumpleaños Full: Comida Libre, DJ y Cotillón LED'
+        benefit: 'Propuesta para grupos grandes (20 o más personas)',
+        details: '[Espacio para detallar modalidad de eventos, reserva de sector exclusivo, seña o beneficios especiales vigentes.]',
+        package: 'Ej: Propuesta de evento o festejo a medida definida por el local'
       };
     }
   }
@@ -471,7 +471,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const perks = getGroupPerks(parseInt(val, 10));
 
       if (calcBenefit) {
-        calcBenefit.innerHTML = `<strong>${perks.benefit}</strong><br><span style="font-size:0.83rem; color:var(--text-muted); display:inline-block; margin-top:3px;">${perks.details}</span><br><span style="font-size:0.8rem; color:var(--neon-amber); font-weight:700;">★ Sugerido: ${perks.package}</span>`;
+        calcBenefit.innerHTML = `<strong>${perks.benefit}</strong><br><span style="font-size:0.83rem; color:var(--text-muted); display:inline-block; margin-top:3px;">${perks.details}</span><br><span style="font-size:0.8rem; color:var(--neon-amber); font-weight:700;">★ Contexto sugerido: ${perks.package}</span>`;
       }
     }
 
@@ -486,13 +486,10 @@ document.addEventListener('DOMContentLoaded', () => {
       calcCta.addEventListener('click', (e) => {
         e.preventDefault();
         const guests = calcRange.value;
-        const perks = getGroupPerks(parseInt(guests, 10));
-        const msg = `¡Hola Cosme Alberdi! 🎂 Queremos reservar para festejar en grupo:
-• Cantidad de invitados: *${guests} personas*
-• Beneficio consultado: *${perks.benefit}*
-• Propuesta de interés: *${perks.package}*
+        const msg = `¡Hola Cosme Alberdi! Queremos consultar para reservar en grupo:
+• Cantidad estimada: *${guests} personas*
 
-¿Tienen disponibilidad y nos pasan los detalles para señar la fecha? ¡Muchas gracias!`;
+¿Nos cuentan qué opciones, disponibilidad de sector y condiciones manejan para esa cantidad? ¡Muchas gracias!`;
         window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
       });
     }
