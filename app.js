@@ -18,46 +18,54 @@ document.addEventListener('DOMContentLoaded', () => {
   const liveStatusHero = document.getElementById('live-status-text-hero');
 
   function getRosarioTime() {
-    // Rosario está en UTC-3
+    // Rosario está en UTC-3 (maneja correctamente el cambio de día al restar 3 horas)
     const now = new Date();
-    const utcHours = now.getUTCHours();
-    const utcMinutes = now.getUTCMinutes();
-    const dayOfWeek = now.getUTCDay(); // 0: Domingo, 6: Sábado
-    let rosarioHour = (utcHours - 3 + 24) % 24;
-    return { hour: rosarioHour, minute: utcMinutes, day: dayOfWeek };
+    const rosarioMs = now.getTime() - 3 * 60 * 60 * 1000;
+    const r = new Date(rosarioMs);
+    return { hour: r.getUTCHours(), minute: r.getUTCMinutes(), day: r.getUTCDay() };
   }
+
+  // Horarios oficiales de Google Maps (0: Dom, 1: Lun, ..., 6: Sáb)
+  // closeAfterMidnight indica la hora de cierre de la madrugada siguiente (en decimal)
+  const SCHEDULE = {
+    0: { open: 8.5, openStr: '08:30 hs', closeAfterMidnight: 1.0 },  // Domingo: 08:30 – 01:00
+    1: { open: 8.0, openStr: '08:00 hs', closeAfterMidnight: 1.0 },  // Lunes: 08:00 – 01:00
+    2: { open: 8.0, openStr: '08:00 hs', closeAfterMidnight: 1.0 },  // Martes: 08:00 – 01:00
+    3: { open: 8.0, openStr: '08:00 hs', closeAfterMidnight: 1.0 },  // Miércoles: 08:00 – 01:00
+    4: { open: 8.0, openStr: '08:00 hs', closeAfterMidnight: 2.0 },  // Jueves: 08:00 – 02:00
+    5: { open: 8.0, openStr: '08:00 hs', closeAfterMidnight: 2.5 },  // Viernes: 08:00 – 02:30
+    6: { open: 8.5, openStr: '08:30 hs', closeAfterMidnight: 2.5 },  // Sábado: 08:30 – 02:30
+  };
 
   function updateLiveScheduleStatus() {
     const { hour, minute, day } = getRosarioTime();
     const currentDecimal = hour + (minute / 60);
-    // Lun a Vie desde 08:00 hs; Sáb y Dom desde 08:30 hs
-    const isWeekend = (day === 0 || day === 6);
-    const openingHour = isWeekend ? 8.5 : 8.0;
-    const openingTimeStr = isWeekend ? '08:30 hs' : '08:00 hs';
+    const todaySched = SCHEDULE[day];
+    const prevDaySched = SCHEDULE[(day + 6) % 7];
 
     let statusMsg = '';
     let isDaytime = false;
     let isOpen = false;
 
-    // Horario: desde la hora de apertura hasta las 03:00 de la madrugada (de corrido)
-    if (currentDecimal >= openingHour || hour < 3) {
+    // Abierto si ya pasó la apertura de hoy, O si estamos en la madrugada antes del cierre de ayer
+    if (currentDecimal >= todaySched.open || currentDecimal < prevDaySched.closeAfterMidnight) {
       isOpen = true;
       if (hour >= 8 && hour < 12) {
-        statusMsg = `Abierto ahora · Cafetería de Especialidad & Chipás`;
+        statusMsg = `Abierto ahora · Cafetería de Especialidad & Desayunos`;
         isDaytime = true;
       } else if (hour >= 12 && hour < 16) {
-        statusMsg = `Abierto ahora · Menú Ejecutivo & Bodegón`;
+        statusMsg = `Abierto ahora · Almuerzos & Cocina de Bodegón`;
         isDaytime = true;
       } else if (hour >= 16 && hour < 19) {
-        statusMsg = `Abierto ahora · Merienda, Tostados & Torre 3 Pisos`;
+        statusMsg = `Abierto ahora · Merienda & Cafetería`;
         isDaytime = true;
       } else {
-        statusMsg = `Abierto ahora · Modo Pub, 12 Canillas & Bodegón`;
+        statusMsg = `Abierto ahora · Modo Pub, Cervecería & Cocina`;
         isDaytime = false;
       }
     } else {
       isOpen = false;
-      statusMsg = `Cerrado por descanso · Abre hoy a las ${openingTimeStr}`;
+      statusMsg = `Cerrado por descanso · Abre hoy a las ${todaySched.openStr}`;
       isDaytime = false;
     }
 
