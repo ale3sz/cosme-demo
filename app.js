@@ -398,29 +398,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 6. GENERADOR DE ENLACES DE WHATSAPP CON MENSAJES PRECONFIGURADOS
+  // 6. GENERADOR DE ENLACES DE WHATSAPP CONECTADOS CON EL BOT OFICIAL
+  // Dispara directamente los flujos y opciones exactas del bot de Cosme
   // =========================================================================
   window.openWhatsApp = function(presetType, customData = {}) {
     let message = '';
 
     switch (presetType) {
       case 'reservar_mesa':
-        message = '¡Hola Cosme Alberdi! Quiero consultar disponibilidad para reservar una mesa. ¿Me indican horarios y opciones para hoy?';
+      case 'reserva':
+      case 'mesa_amigos':
+        message = 'Reservar 🗓️';
         break;
       case 'cumpleanos':
-        message = '¡Hola Cosme! Cumplo años y quiero consultar por promociones de grupo, sector exclusivo y el brindis de regalo.';
+      case 'festejos':
+        message = 'Consultar Promos de Cumple 🎁';
         break;
-      case 'menu_ejecutivo':
-        message = '¡Hola Cosme! ¿Me podrían pasar las opciones del Menú Ejecutivo del día de hoy con plato, bebida y postre?';
-        break;
-      case 'pasta_libre':
-        message = '¡Hola Cosme! Quiero reservar para el Jueves de Pasta Libre. ¿Tienen mesa disponible para cenar?';
-        break;
-      case 'mesa_amigos':
-        message = '¡Hola Cosme Alberdi! Quiero consultar disponibilidad para reservar una mesa. ¿Me indican horarios y opciones para hoy?';
+      case 'delivery':
+        message = 'Hacer un pedido Delivery 🛵';
         break;
       case 'take_away':
-        message = '¡Hola Cosme! Quiero hacer un pedido para retirar por el local de Bv. Rondeau 1602. ¿Me pasan la carta para elegir?';
+        message = 'Hacer un pedido Take Away 🥡🍻';
+        break;
+      case 'eventos':
+        message = 'Eventos 🎟️';
+        break;
+      case 'carta':
+        message = 'Carta / Menú 📖';
+        break;
+      case 'consultas':
+        message = 'Consultas / Reclamos 🤫';
+        break;
+      case 'salon_cosme':
+        message = 'Quiero consultar el salón COSME +';
+        break;
+      case 'menu_ejecutivo':
+        message = '¡Hola Cosme! ¿Me podrían pasar las opciones del Menú Ejecutivo del día de hoy?';
+        break;
+      case 'pasta_libre':
+        message = '¡Hola Cosme! Quiero consultar para el Jueves de Pasta Libre.';
         break;
       case 'plato_especifico':
         const dish = customData.dishName || 'un plato de la carta';
@@ -493,12 +509,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (calcCta) {
       calcCta.addEventListener('click', (e) => {
         e.preventDefault();
-        const guests = calcRange.value;
-        const msg = `¡Hola Cosme Alberdi! Queremos consultar para reservar en grupo:
-• Cantidad estimada: *${guests} personas*
-
-¿Nos cuentan qué opciones, disponibilidad de sector y condiciones manejan para esa cantidad? ¡Muchas gracias!`;
-        window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
+        // Conexión directa con la opción 'Consultar Promos de Cumple' del bot
+        openWhatsApp('cumpleanos');
       });
     }
   }
@@ -616,13 +628,17 @@ document.addEventListener('DOMContentLoaded', () => {
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
       const target = trigger.getAttribute('data-open-modal');
-      if (target === 'reserva') openModal(modalReserva);
+      if (target === 'reserva') {
+        // Derivación directa y sin fricción al bot de WhatsApp con la opción 'Reservar 🗓️'
+        openWhatsApp('reservar_mesa');
+        return;
+      }
       if (target === 'carta') {
         const defaultDoc = (currentTheme === 'day') ? 'dia' : 'noche';
         setPdfDoc(defaultDoc);
         openModal(modalCarta);
       }
-          });
+    });
   });
 
   document.querySelectorAll('.modal-close-btn').forEach(btn => {
