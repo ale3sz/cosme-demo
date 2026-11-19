@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="night">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" id="theme-color-meta" content="#0C0D10">
+  <title>Cosme Alberdi — Pub, Restaurante &amp; Cervecería | Bv. Rondeau 1602, Rosario</title>
+  <meta name="description" content="Cosme Alberdi en Boulevard Rondeau 1602, Rosario. Punto de encuentro gastronómico con cocina de bodegón abundante, cafetería de especialidad, cervecería artesanal y noches de pub.">
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       1. BARRA DE NAVEGACIÓN PRINCIPAL
+       ===================================================================== -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#inicio" class="brand-logo" aria-label="Volver al inicio">
+        <!-- Logo Noche: Mascota Cosme en Ámbar Dorado -->
+        <img src="assets/cosme-mascot-amber.png" alt="Mascota Cosme Alberdi" class="nav-logo-night" width="44" height="44">
+        <!-- Logo Día: Wordmark Cosme en Negro Vintage -->
+        <img src="assets/cosme-wordmark-black.png" alt="Logo Cosme Alberdi" class="nav-logo-day" height="32">
+        <div class="brand-title nav-brand-text">
+          <span>COSME</span>
+          <span class="brand-sub">ALBERDI · ROSARIO</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#inicio" class="active">Inicio</a>
+        <a href="#menu">Cartas &amp; Canillas</a>
+        <a href="#resenas">Opiniones</a>
+        <a href="#festejos">Reservas &amp; Festejos</a>
+        <a href="#ubicacion">Ubicación</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Switch Minimalista Día / Noche (Shadcn UI Style) -->
+        <button id="theme-toggle-btn" class="theme-switch" role="switch" aria-label="Cambiar entre Modo Noche y Día" title="Modo Día / Noche">
+          <span class="switch-thumb">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          </span>
+        </button>
+
+        <button class="btn-nav-reserve" data-open-modal="reserva">
+          Reservar Mesa
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- =====================================================================
+         2. HERO SECTION
+         ===================================================================== -->
+    <section class="hero">
+      <div class="container hero-content">
+        <a href="https://maps.google.com/?q=Pub+y+Restaurante+Cosme+Alberdi" target="_blank" rel="noopener noreferrer" class="badge-location badge-location--interactive" title="Tocá para abrir indicaciones en Google Maps">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>BV. RONDEAU 1602 · BARRIO ALBERDI, ROSARIO</span>
+          <span class="badge-action-pill">CÓMO LLEGAR &rarr;</span>
+        </a>
+
+        <div class="hero-logo-box" id="hero-logo-box" title="Cosme Alberdi — Tocá para interactuar">
+          <!-- Canvas acelerado por hardware para 60 FPS fluidos sin caída de frames -->
+          <canvas id="hero-logo-canvas" width="800" height="240" class="hero-logo-canvas neon-breathing"></canvas>
+          <img id="hero-logo-display" src="assets/logo_morph/seq/f21.webp" alt="Cosme Alberdi" class="hero-logo-img" width="480" style="display:none;">
+        </div>
+
+        <h1 class="hero-title">EL CLÁSICO DE ZONA NORTE</h1>
+        <p class="hero-subtitle">
+          De la mañana a la madrugada. Cocina de bodegón con porciones desbordantes para compartir, cafetería de especialidad, canillas de cerveza tirada y la mística nocturna de Rondeau.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#menu" class="btn-kraft-torn">
+            Ver Cartas &amp; Canillas <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <button class="btn-whatsapp-hero" data-open-modal="reserva">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+            Reservar Mesa
+          </button>
+          <a href="https://www.pedidosya.com.ar/restaurantes/rosario/cosme-alberdi-menu" target="_blank" rel="noopener noreferrer" class="btn-pedidosya-hero" title="Pedir Delivery por PedidosYa">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4"/><path d="M12 16V8"/></svg>
+            Delivery PedidosYa
+          </a>
+        </div>
+
+        <div class="live-status">
+          <span class="pulse-dot"></span>
+          <span id="live-status-text-hero">Detectando estado en vivo en Rosario...</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. MENÚ DE TARJETITAS DE NAVEGACIÓN RÁPIDA (ACCESO A CADA SECCIÓN)
+         ===================================================================== -->
+    <section id="accesos-secciones" class="quick-nav-section" aria-label="Menú de acceso rápido a secciones">
+      <div class="container">
+        <div class="quick-nav-header">
+          <div class="quick-nav-badge">
+            <span class="pulse-dot" style="background:var(--neon-amber); width:7px; height:7px;"></span>
+            <span>ACCESOS RÁPIDOS · TOCÁ Y VIAJÁ A CADA SECCIÓN</span>
+          </div>
+          <h2 class="quick-nav-title">¿Qué estás buscando en Cosme?</h2>
+        </div>
+
+        <div class="quick-nav-grid">
+          <!-- Tarjeta 1: UBICACIÓN Y CÓMO LLEGAR (DESTACADA) -->
+          <a href="#ubicacion" class="quick-nav-card quick-nav-card--featured" id="card-nav-ubicacion">
+            <div class="quick-nav-card-top">
+              <div class="quick-nav-icon-box quick-nav-icon--location">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <span class="quick-nav-badge-pill">Bv. Rondeau 1602</span>
+            </div>
+            <div class="quick-nav-card-body">
+              <h3 class="quick-nav-card-title">Ubicación &amp; Cómo Llegar</h3>
+              <p class="quick-nav-card-desc">Mapa en vivo, colectivos directos y estacionamiento en Zona Norte.</p>
+            </div>
+            <div class="quick-nav-card-footer">
+              <span class="quick-nav-action-text">Ver mapa sin scrollear</span>
+              <span class="quick-nav-arrow">&darr;</span>
+            </div>
+          </a>
+
+          <!-- Tarjeta 2: CARTAS & BODEGÓN -->
+          <a href="#menu" class="quick-nav-card" data-jump-menu="night">
+            <div class="quick-nav-card-top">
+              <div class="quick-nav-icon-box quick-nav-icon--food">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+              </div>
+              <span class="quick-nav-badge-pill">Bodegón XL</span>
+            </div>
+            <div class="quick-nav-card-body">
+              <h3 class="quick-nav-card-title">Cartas &amp; Bodegón</h3>
+              <p class="quick-nav-card-desc">Milanesas gigantes, bondiola braseada y platos para compartir.</p>
+            </div>
+            <div class="quick-nav-card-footer">
+              <span class="quick-nav-action-text">Explorar platos</span>
+              <span class="quick-nav-arrow">&darr;</span>
+            </div>
+          </a>
+
+          <!-- Tarjeta 3: 12 CANILLAS TIRADAS -->
+          <a href="#canillas" class="quick-nav-card" data-jump-menu="taps">
+            <div class="quick-nav-card-top">
+              <div class="quick-nav-icon-box quick-nav-icon--beer">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M17 11h1a3 3 0 0 1 0 6h-1"/><path d="M9 12v6"/><path d="M13 12v6"/><path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 3 11 3s2 .5 3 .5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"/><path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg>
+              </div>
+              <span class="quick-nav-badge-pill" style="color:var(--hop-mint); border-color:rgba(89, 189, 149, 0.35);">12 Taps en Vivo</span>
+            </div>
+            <div class="quick-nav-card-body">
+              <h3 class="quick-nav-card-title">Canillas Tiradas</h3>
+              <p class="quick-nav-card-desc">Cerveza artesanal fresca tirada a 2°C en copón enfriado.</p>
+            </div>
+            <div class="quick-nav-card-footer">
+              <span class="quick-nav-action-text">Ver pizarra hoy</span>
+              <span class="quick-nav-arrow">&darr;</span>
+            </div>
+          </a>
+
+          <!-- Tarjeta 4: CAFETERÍA & DÍA -->
+          <a href="#menu" class="quick-nav-card" data-jump-menu="day">
+            <div class="quick-nav-card-top">
+              <div class="quick-nav-icon-box quick-nav-icon--coffee">
+                <img src="assets/cosme-mascot-green.png" alt="Cosme Diurno" width="22" height="26" style="object-fit:contain;">
+              </div>
+              <span class="quick-nav-badge-pill">08:00 a 20:00 h</span>
+            </div>
+            <div class="quick-nav-card-body">
+              <h3 class="quick-nav-card-title">Cafetería &amp; Día</h3>
+              <p class="quick-nav-card-desc">Espresso barista, desayunos de campo y menú ejecutivo mediodía.</p>
+            </div>
+            <div class="quick-nav-card-footer">
+              <span class="quick-nav-action-text">Ver propuesta diurna</span>
+              <span class="quick-nav-arrow">&darr;</span>
+            </div>
+          </a>
+
+          <!-- Tarjeta 5: RESERVAR MESA -->
+          <a href="#" class="quick-nav-card" data-open-modal="reserva">
+            <div class="quick-nav-card-top">
+              <div class="quick-nav-icon-box quick-nav-icon--reserve">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+              </div>
+              <span class="quick-nav-badge-pill" style="color:var(--whatsapp-green); border-color:rgba(37, 211, 102, 0.35);">Sin Turnos</span>
+            </div>
+            <div class="quick-nav-card-body">
+              <h3 class="quick-nav-card-title">Reservar Mesa</h3>
+              <p class="quick-nav-card-desc">Elegí tu horario preferido sin apuros para almorzar o cenar.</p>
+            </div>
+            <div class="quick-nav-card-footer">
+              <span class="quick-nav-action-text" style="color:var(--whatsapp-green);">Abrir formulario</span>
+              <span class="quick-nav-arrow">&rarr;</span>
+            </div>
+          </a>
+
+          <!-- Tarjeta 6: CUMPLEAÑOS & FESTEJOS -->
+          <a href="#festejos" class="quick-nav-card">
+            <div class="quick-nav-card-top">
+              <div class="quick-nav-icon-box quick-nav-icon--party">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+              </div>
+              <span class="quick-nav-badge-pill">Grupos &amp; Eventos</span>
+            </div>
+            <div class="quick-nav-card-body">
+              <h3 class="quick-nav-card-title">Festejos &amp; Cumples</h3>
+              <p class="quick-nav-card-desc">Sectores exclusivos, promociones grupales y brindis de regalo.</p>
+            </div>
+            <div class="quick-nav-card-footer">
+              <span class="quick-nav-action-text">Consultar opciones</span>
+              <span class="quick-nav-arrow">&darr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+    <!-- =====================================================================
+         4. SECCIÓN CARTAS & CANILLAS (PROPUESTA GASTRONÓMICA UNIFICADA)
+         ===================================================================== -->
+    <section id="menu" class="menu-section scroll-reveal">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Gastronomía &amp; Cervecería</span>
+          <h2 class="section-heading">CARTAS &amp; CANILLAS</h2>
+          <p class="hero-subtitle">
+            Cocina de bodegón con porciones para compartir y 12 canillas de cerveza artesanal tiradas en copón enfriado.
+          </p>
+        </div>
+
+        <!-- Botones de Modo para la carta -->
+        <div class="menu-mode-tabs">
+          <button class="menu-mode-tab active" data-menu-target="night">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg> Carta Nocturna (Bodegón &amp; Pub)
+          </button>
+          <button class="menu-mode-tab" data-menu-target="taps">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M17 11h1a3 3 0 0 1 0 6h-1"/><path d="M9 12v6"/><path d="M13 12v6"/><path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 3 11 3s2 .5 3 .5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"/><path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg> Canillas Tiradas (12 Taps en Vivo)
+          </button>
+          <button class="menu-mode-tab" data-menu-target="day">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg> Carta Diurna (Cafetería &amp; Almuerzos)
+          </button>
+        </div>
+
+        <!-- Filtros de decisión rápida (CRO: reduce fricción de exploración) -->
+        <div class="menu-quick-filters" id="menu-quick-filters">
+          <button class="filter-pill active" data-filter="all">Todos los platos</button>
+          <button class="filter-pill" data-filter="destacados">⭐ Lo más pedido</button>
+          <button class="filter-pill" data-filter="grupos">👥 Tablas &amp; Grupos</button>
+          <button class="filter-pill" data-filter="sintacc">🌾 Opción Sin TACC</button>
+          <button class="filter-pill" data-filter="veggie">🥑 Veggie</button>
+        </div>
+
+        <!-- Header Especial Diurno con Mascota Cosme Verde -->
+        <div id="diurnal-header-banner" class="diurnal-header-banner" style="display:none;">
+          <div class="diurnal-banner-character">
+            <img src="assets/cosme-mascot-green.png" alt="Cosme Personaje Verde - Especialidad Diurna" class="diurnal-mascot-img" width="84" height="105">
+          </div>
+          <div class="diurnal-banner-content">
+            <div class="diurnal-badge">
+              <span class="pulse-dot" style="background:var(--hop-mint);"></span>
+              <span>PROPUESTA DE DÍA · DE 08:00 A 20:00 H</span>
+            </div>
+            <h3 class="diurnal-title">Cafetería de Especialidad &amp; Cocina de Día</h3>
+            <p class="diurnal-desc">
+              Café de origen calibrado por baristas, desayunos de campo, meriendas abundantes y platos frescos del bodegón para tu almuerzo en Zona Norte.
+            </p>
+            <div class="diurnal-features">
+              <span class="diurnal-feat-pill">☕ Espresso Barista &amp; Latte Art</span>
+              <span class="diurnal-feat-pill">🥐 Tostados &amp; Pastelería Artesanal</span>
+              <span class="diurnal-feat-pill">🍲 Menú Ejecutivo Diario</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12 Canillas Tiradas (Tab 'taps') -->
+        <div id="canillas" class="taps-board" style="display:none; margin-top:28px;">
+          <div class="taps-header">
+            <div class="taps-title-box">
+              <div class="taps-icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M17 11h1a3 3 0 0 1 0 6h-1"/><path d="M9 12v6"/><path d="M13 12v6"/><path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 3 11 3s2 .5 3 .5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"/><path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg></div>
+              <div>
+                <h3>PIZARRA DE CANILLAS EN VIVO</h3>
+                <span style="font-size:0.85rem; color:var(--text-muted);">Cerveza artesanal tirada a 2°C en copón enfriado</span>
+              </div>
+            </div>
+            <div class="taps-live-badge">
+              <span class="pulse-dot" style="background:#59bd95; width:8px; height:8px;"></span>
+              <span>12 CANILLAS ACTIVAS HOY</span>
+            </div>
+          </div>
+
+          <!-- Filtros rápidos por paladar -->
+          <div class="tap-palate-filters" role="group" aria-label="Filtrar canillas por paladar">
+            <button type="button" class="tap-filter-chip active" data-palate="all">Todas (12)</button>
+            <button type="button" class="tap-filter-chip" data-palate="suaves">Suaves &amp; Rubias</button>
+            <button type="button" class="tap-filter-chip" data-palate="lupuladas">Lupuladas (IPA/APA)</button>
+            <button type="button" class="tap-filter-chip" data-palate="rojas-negras">Rojas &amp; Negras</button>
+            <button type="button" class="tap-filter-chip" data-palate="frutales">Frutales &amp; Rotativa</button>
+          </div>
+
+          <div class="taps-board-list">
+            <div class="tap-row" data-palate-item="lupuladas" data-beer-name="IPA Alberdi" data-beer-style="India Pale Ale" style="--srm-color:#e5951a; --srm-glow:rgba(229, 149, 26, 0.45);">
+              <div class="tap-row-num">01</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">IPA Alberdi</h4>
+                  <span class="tap-row-style">Lupulada & Aromática</span>
+                </div>
+                <p class="tap-row-desc">Explosión de lúpulos patagónicos con notas a pomelo rosado, pino y resina. Amargor marcado y persistente.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>6.2%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>55</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:80%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.500</span>
+                <button type="button" class="tap-row-btn" data-order-beer="IPA Alberdi" data-order-style="India Pale Ale">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="suaves" data-beer-name="Honey de la Isla" data-beer-style="Honey Ale" style="--srm-color:#f5c042; --srm-glow:rgba(245, 192, 66, 0.45);">
+              <div class="tap-row-num">02</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Honey de la Isla</h4>
+                  <span class="tap-row-style">Suave & Dulce Natural</span>
+                </div>
+                <p class="tap-row-desc">Miel pura de monte de las islas del Paraná. Suavidad maltosa con final dulce y refrescante.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>5.0%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>18</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:26%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.200</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Honey de la Isla" data-order-style="Honey Ale">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="rojas-negras" data-beer-name="Scottish Heavy" data-beer-style="Scottish Export" style="--srm-color:#c85232; --srm-glow:rgba(200, 82, 50, 0.45);">
+              <div class="tap-row-num">03</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Scottish Heavy</h4>
+                  <span class="tap-row-style">Caramelo & Malta Roja</span>
+                </div>
+                <p class="tap-row-desc">Notas profundas a toffee, frutos secos y corteza de pan horneado. Cuerpo sedoso y calidez en boca.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>5.5%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>22</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:34%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.200</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Scottish Heavy" data-order-style="Scottish Export">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="suaves" data-beer-name="Golden Pampeana" data-beer-style="Golden Ale" style="--srm-color:#eab938; --srm-glow:rgba(234, 185, 56, 0.45);">
+              <div class="tap-row-num">04</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Golden Pampeana</h4>
+                  <span class="tap-row-style">Dorada & Refrescante</span>
+                </div>
+                <p class="tap-row-desc">Cerveza rubia de trago ágil, espuma blanca cremosa y final limpio. La compañera perfecta para arrancar.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>4.8%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>15</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:22%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.000</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Golden Pampeana" data-order-style="Golden Ale">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="lupuladas" data-beer-name="APA del Bulevar" data-beer-style="American Pale Ale" style="--srm-color:#df8720; --srm-glow:rgba(223, 135, 32, 0.45);">
+              <div class="tap-row-num">05</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">APA del Bulevar</h4>
+                  <span class="tap-row-style">Cítricos & Amargor Medio</span>
+                </div>
+                <p class="tap-row-desc">Equilibrio redondo entre malta cristal y lúpulos americanos. Aromas a mango, maracuyá y cáscara de naranja.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>5.2%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>38</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:56%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.400</span>
+                <button type="button" class="tap-row-btn" data-order-beer="APA del Bulevar" data-order-style="American Pale Ale">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="rojas-negras" data-beer-name="Stout Café Cosme" data-beer-style="Stout Imperial" style="--srm-color:#b0744f; --srm-glow:rgba(176, 116, 79, 0.45);">
+              <div class="tap-row-num">06</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Stout Café Cosme</h4>
+                  <span class="tap-row-style">Tostada & Cacao Puro</span>
+                </div>
+                <p class="tap-row-desc">Infusionada en frío con café de especialidad de nuestro salón. Notas a chocolate amargo y crema moka.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>7.0%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>32</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:48%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.600</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Stout Café Cosme" data-order-style="Stout Imperial">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="lupuladas" data-beer-name="Session IPA Verano" data-beer-style="Session IPA" style="--srm-color:#59bd95; --srm-glow:rgba(89, 189, 149, 0.45);">
+              <div class="tap-row-num">07</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Session IPA Verano</h4>
+                  <span class="tap-row-style">Ultra Tomable & Aromas</span>
+                </div>
+                <p class="tap-row-desc">Bajo alcohol, máxima frescura. Aromas intensos a frutas tropicales sin saturar el paladar.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>4.2%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>40</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:60%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.300</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Session IPA Verano" data-order-style="Session IPA">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="frutales" data-beer-name="Canilla Rotativa" data-beer-style="Especial Invitada" style="--srm-color:#ff3b43; --srm-glow:rgba(255, 59, 67, 0.45);">
+              <div class="tap-row-num">08</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Canilla Rotativa</h4>
+                  <span class="tap-row-style">Edición Limitada</span>
+                </div>
+                <p class="tap-row-desc">Barril especial de productores invitados de Rosario y la región. Consultá qué estilo pinchamos hoy.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>6.5%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>Esp.</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:68%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.800</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Canilla Rotativa" data-order-style="Especial Invitada">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="rojas-negras" data-beer-name="Irish Red Alberdi" data-beer-style="Irish Red Ale" style="--srm-color:#c93b2b; --srm-glow:rgba(201, 59, 43, 0.45);">
+              <div class="tap-row-num">09</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Irish Red Alberdi</h4>
+                  <span class="tap-row-style">Malta Caramelo</span>
+                </div>
+                <p class="tap-row-desc">Cerveza roja con perfil a maltas caramelo tostadas, toque de toffee y final limpio muy fácil de tomar.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>5.2%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>22</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:34%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.200</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Irish Red Alberdi" data-order-style="Irish Red Ale">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="suaves" data-beer-name="Trigo Cítrico Belga" data-beer-style="Witbier" style="--srm-color:#f3cf65; --srm-glow:rgba(243, 207, 101, 0.45);">
+              <div class="tap-row-num">10</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Trigo Cítrico Belga</h4>
+                  <span class="tap-row-style">Trigo & Naranja</span>
+                </div>
+                <p class="tap-row-desc">Cerveza de trigo turbia y sedosa, aromatizada con coriandro y cáscara de naranja amarga. Ideal tardes cálidas.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>4.8%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>15</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:22%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.300</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Trigo Cítrico Belga" data-order-style="Witbier">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="rojas-negras" data-beer-name="Robust Porter Cacao" data-beer-style="Porter" style="--srm-color:#9b6442; --srm-glow:rgba(155, 100, 66, 0.45);">
+              <div class="tap-row-num">11</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Robust Porter Cacao</h4>
+                  <span class="tap-row-style">Chocolate & Tostado</span>
+                </div>
+                <p class="tap-row-desc">Cerveza negra con notas de nibs de cacao, malta tostada y final aterciopelado. Excelente con bondiola.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>5.8%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>28</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:42%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.400</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Robust Porter Cacao" data-order-style="Porter">Pedir &rarr;</button>
+              </div>
+            </div>
+            <div class="tap-row" data-palate-item="frutales" data-beer-name="Catharina Sour Frutos Rojos" data-beer-style="Sour Frutal" style="--srm-color:#e03568; --srm-glow:rgba(224, 53, 104, 0.45);">
+              <div class="tap-row-num">12</div>
+              <div class="tap-row-info">
+                <div class="tap-row-head">
+                  <h4 class="tap-row-name">Catharina Sour Frutos Rojos</h4>
+                  <span class="tap-row-style">Acidez & Fruta</span>
+                </div>
+                <p class="tap-row-desc">Estilo acidulado y refrescante fermentado con pulpa natural de frambuesas y moras. Explosión frutal pura.</p>
+                <div class="tap-row-specs">
+                  <span class="tap-spec-val">ABV <strong>4.5%</strong></span>
+                  <span class="ibu-meter">
+                    <span>IBU <strong>8</strong></span>
+                    <span class="ibu-bar-track"><span class="ibu-bar-fill" style="width:14%;"></span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="tap-row-action">
+                <span class="tap-row-price">$4.500</span>
+                <button type="button" class="tap-row-btn" data-order-beer="Catharina Sour Frutos Rojos" data-order-style="Sour Frutal">Pedir &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="taps-board-footer">
+            <span>★ TODAS LAS PINTAS SE TIRAN A 2°C EN COPÓN ENFRIADO · CONSULTÁ RECARGA DE GROWLER</span>
+            <span>HAPPY HOUR TODOS LOS DÍAS 18 A 20 HS</span>
+          </div>
+        </div>
+
+        <!-- Sugeridor Interactivo de Almuerzo Ejecutivo (Visible en Modo Día) -->
+        <div id="lunch-suggester-box" class="lunch-suggester scroll-reveal" style="display:none;">
+          <div class="lunch-suggester-head">
+            <div class="lunch-suggester-title">
+              <img src="assets/cosme-mascot-green.png" alt="Cosme Verde" class="suggester-mascot-icon" width="28" height="35" style="object-fit:contain; vertical-align:middle;">
+              <span>Armá tu Menú Ejecutivo del Mediodía</span>
+            </div>
+            <div class="lunch-badge-price">Precio Fijo $9.800</div>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:16px;">
+            Disponible de Lunes a Viernes de 12:00 a 16:00 h. Incluye plato principal abundante, bebida fresca y café espresso o postre.
+          </p>
+          <div class="lunch-selectors-grid">
+            <div class="lunch-select-wrap">
+              <label for="lunch-dish-select">1. Plato Principal</label>
+              <select id="lunch-dish-select" class="lunch-select-control">
+                <option value="Sorrentinos caseros con salsa rosa">Sorrentinos caseros con salsa rosa</option>
+                <option value="Milanesa de ternera al plato con papas">Milanesa de ternera al plato con papas</option>
+                <option value="Pechuga grillée con mix verde y tomates">Pechuga grillée con mix verde y tomates</option>
+                <option value="Tarta rústica de calabaza asada y queso brie">Tarta rústica de calabaza y brie</option>
+              </select>
+            </div>
+            <div class="lunch-select-wrap">
+              <label for="lunch-drink-select">2. Bebida</label>
+              <select id="lunch-drink-select" class="lunch-select-control">
+                <option value="Limonada casera con menta y jengibre">Limonada con menta y jengibre</option>
+                <option value="Copa de vino tinto o blanco de la casa">Copa de vino de la casa</option>
+                <option value="Agua mineral con o sin gas">Agua mineral con o sin gas</option>
+                <option value="Gaseosa línea clásica">Gaseosa línea clásica</option>
+              </select>
+            </div>
+            <div class="lunch-select-wrap">
+              <label for="lunch-dessert-select">3. Cierre Dulce o Café</label>
+              <select id="lunch-dessert-select" class="lunch-select-control">
+                <option value="Café Espresso de especialidad barista">Café Espresso Barista</option>
+                <option value="Bocha de helado artesanal con praliné">Bocha de helado artesanal</option>
+                <option value="Flan casero con dulce de leche">Flan casero con dulce de leche</option>
+              </select>
+            </div>
+          </div>
+          <div class="lunch-actions">
+            <button id="lunch-cta-btn" class="btn-lunch-cta">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"/><path d="M15 11v11"/><path d="M6 2v20"/><path d="M9 2v4a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"/></svg> Pedir Menú Ejecutivo por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- Grid de Platos -->
+        <div class="menu-grid">
+          
+          <!-- PLATOS NOCTURNOS -->
+          <article class="dish-card dish-night" data-category="destacados">
+            <div class="dish-img-wrap">
+              <img src="assets/milanesa-xl.jpg" alt="Milanesa Napolitana Gigante XL" class="dish-img" loading="lazy">
+              <span class="dish-badge">⭐ Para Compartir 2-3</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-header">
+                <h3 class="dish-name">Milanesa Napolitana XL</h3>
+                <span class="dish-price">$18.500</span>
+              </div>
+              <p class="dish-desc">
+                Corte de carne tierna seleccionado, salsa de tomate de la casa, jamón cocido de primera y doble mozzarella gratinada sobre colchón gigante de papas fritas caseras.
+              </p>
+              <button class="dish-cta-btn" data-wa-preset="plato_especifico" data-dish-name="Milanesa Napolitana XL">
+                Pedir por WhatsApp <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Carlito Rosarino Clásico de Cosme -->
+          <article class="dish-card dish-night" data-category="destacados">
+            <div class="dish-img-wrap">
+              <img src="assets/bondiola-braseada.jpg" alt="Carlito Rosarino de Vacío Braseado" class="dish-img" loading="lazy">
+              <span class="dish-badge" style="background:var(--terracotta); color:#fff;">Ícono Rosarino</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-header">
+                <h3 class="dish-name">Carlito de Vacío Braseado</h3>
+                <span class="dish-price">$12.800</span>
+              </div>
+              <p class="dish-desc">
+                El clásico sándwich tostado rosarino llevado a otro nivel: pan miga especial crocante, abundante queso derretido, vacío cocinado a baja temperatura y toque de manteca aromatizada.
+              </p>
+              <button class="dish-cta-btn" data-wa-preset="plato_especifico" data-dish-name="Carlito de Vacío Braseado">
+                Pedir por WhatsApp <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Tabla para Grupos: Festejos y Amigos -->
+          <article class="dish-card dish-night" data-category="grupos destacados">
+            <div class="dish-img-wrap">
+              <img src="assets/milanesa-xl.jpg" alt="Tabla La Previa de Rondeau" class="dish-img" loading="lazy">
+              <span class="dish-badge" style="background:var(--neon-amber); color:#000; font-weight:800;">Para 4 a 6 Personas</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-header">
+                <h3 class="dish-name">Tabla "La Previa de Rondeau"</h3>
+                <span class="dish-price">$24.500</span>
+              </div>
+              <p class="dish-desc">
+                Ideal cumpleaños y grupos: bastones de muzzarella crujientes, fingers de pollo rebozados, empanadas copetín caseras, montaña de papas cheddar con panceta y dips de salsas artesanales.
+              </p>
+              <button class="dish-cta-btn" data-wa-preset="plato_especifico" data-dish-name="Tabla La Previa de Rondeau">
+                Pedir Tabla para Grupo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="dish-card dish-night" data-category="sintacc">
+            <div class="dish-img-wrap">
+              <img src="assets/bondiola-braseada.jpg" alt="Bondiola Braseada a la Cerveza" class="dish-img" loading="lazy">
+              <span class="dish-badge">Cocción Lenta · Apto Sin TACC</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-header">
+                <h3 class="dish-name">Bondiola Braseada</h3>
+                <span class="dish-price">$16.900</span>
+              </div>
+              <p class="dish-desc">
+                Bondiola desmechada que se deshace con el tenedor, glaseada en reducción artesanal, servida con papines al romero y cebollas caramelizadas. Opción 100% Sin TACC certificada.
+              </p>
+              <button class="dish-cta-btn" data-wa-preset="plato_especifico" data-dish-name="Bondiola Braseada">
+                Pedir por WhatsApp <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="dish-card dish-night" data-category="veggie">
+            <div class="dish-img-wrap">
+              <img src="assets/pastas-caseras.jpg" alt="Jueves de Pasta Libre" class="dish-img" loading="lazy">
+              <span class="dish-badge">🥑 Opción Veggie</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-header">
+                <h3 class="dish-name">Sorrentinos Artesanales</h3>
+                <span class="dish-price">$12.500</span>
+              </div>
+              <p class="dish-desc">
+                Rellenos de calabaza asada, nuez y queso cremoso o jamón y ricota, bañados en salsa rosa, crema de verdeo o fileto clásico, con abundante queso parmesano rallado.
+              </p>
+              <button class="dish-cta-btn" data-wa-preset="pasta_libre">
+                Reservar Pasta Libre <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="dish-card dish-night" data-category="destacados">
+            <div class="dish-img-wrap">
+              <img src="assets/smash-burger-cerveza.jpg" alt="Smash Burger con Cascada de Cheddar" class="dish-img" loading="lazy">
+              <span class="dish-badge">Cascada Cheddar en Vivo</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-header">
+                <h3 class="dish-name">Burger Cascada Cheddar</h3>
+                <span class="dish-price">$12.400</span>
+              </div>
+              <p class="dish-desc">
+                Doble medallón smash con costra crujiente, panceta ahumada y bañado en mesa con cascada de queso cheddar fundido hirviendo. Una experiencia visual irresistible.
+              </p>
+              <button class="dish-cta-btn" data-wa-preset="plato_especifico" data-dish-name="Burger Cascada Cheddar">
+                Pedir por WhatsApp <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="dish-card dish-night">
+            <div class="dish-img-wrap">
+              <img src="assets/cerveza-tirada-hero.jpg" alt="Cerveza Artesanal Tirada" class="dish-img" loading="lazy">
+              <span class="dish-badge">Canilla Rotativa</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-header">
+                <h3 class="dish-name">Pintas Tiradas</h3>
+                <span class="dish-price">$4.200</span>
+              </div>
+              <p class="dish-desc">
+                Canillas con los mejores estilos: IPA aromática, Honey suave, Scottish maltosa y Golden refrescante, servidas en copón bien frío con espuma persistente.
+              </p>
+              <button class="dish-cta-btn" data-wa-preset="plato_especifico" data-dish-name="Pinta Cerveza Tirada">
+                Consultar Canillas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="dish-card dish-night">
+            <div class="dish-img-wrap">
+              <img src="assets/brindis-cerveza-noche.jpg" alt="Tragos de Autor y Brindis" class="dish-img" loading="lazy">
+              <span class="dish-badge">Barra &amp; Cócteles</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-header">
+                <h3 class="dish-name">Coctelería de Autor</h3>
+                <span class="dish-price">$5.500</span>
+              </div>
+              <p class="dish-desc">
+                Gin Tonics macerados con botánicos, Aperol Spritz, Fernet Branca y cócteles especiales preparados por nuestros bartenders para encender la noche.
+              </p>
+              <button class="dish-cta-btn" data-wa-preset="plato_especifico" data-dish-name="Coctelería de Autor">
+                Consultar Barra <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- PLATOS DIURNOS (CAFETERÍA Y ALMUERZOS) -->
+          <article class="dish-card dish-day" style="display:none;" data-category="destacados sintacc">
+            <div class="dish-img-wrap">
+              <img src="assets/desayuno-especialidad.jpg" alt="Chipás Tostados Caseros Sin TACC" class="dish-img" loading="lazy">
+              <span class="dish-badge">🧀 Horneados en el Día · Sin TACC</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-header">
+                <h3 class="dish-name">Chipás Tostados Rellenos</h3>
+                <span class="dish-price">$6.900</span>
+              </div>
+              <p class="dish-desc">
+                Chipás artesanales con abundante queso sardo y gouda, tostados en prensa de hierro y rellenos de jamón cocido natural o pasta de palta. 100% Sin TACC.
+              </p>
+              <button class="dish-cta-btn" data-wa-preset="plato_especifico" data-dish-name="Chipás Tostados Rellenos">
+                Pedir Chipás por WhatsApp <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="dish-card dish-day" style="display:none;" data-category="destacados">
+            <div class="dish-img-wrap">
+              <img src="assets/desayuno-especialidad.jpg" alt="Café de Especialidad y Tostado" class="dish-img" loading="lazy">
+              <span class="dish-badge">Desayuno &amp; Merienda</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-header">
+                <h3 class="dish-name">Desayuno Especial Cosme</h3>
+                <span class="dish-price">$7.800</span>
+              </div>
+              <p class="dish-desc">
+                Café cappuccino con latte art, tostado de jamón y queso fundido en pan de masa madre de campo, dos medialunas de manteca glaseadas y vaso de soda con limón.
+              </p>
+              <button class="dish-cta-btn" data-wa-preset="plato_especifico" data-dish-name="Desayuno Especial Cosme">
+                Pedir Desayuno <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="dish-card dish-day" style="display:none;">
+            <div class="dish-img-wrap">
+              <img src="assets/torre-merienda.jpg" alt="Torre de Merienda para Compartir" class="dish-img" loading="lazy">
+              <span class="dish-badge">Para 2 Personas</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-header">
+                <h3 class="dish-name">Torre Merienda Alberdi</h3>
+                <span class="dish-price">$14.500</span>
+              </div>
+              <p class="dish-desc">
+                Selección de tostadas de campo, dip de queso crema y mermelada casera, porción de torta a elección, mini alfajores y dos infusiones a gusto.
+              </p>
+              <button class="dish-cta-btn" data-wa-preset="plato_especifico" data-dish-name="Torre Merienda Alberdi">
+                Pedir Merienda <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="dish-card dish-day" style="display:none;">
+            <div class="dish-img-wrap">
+              <img src="assets/pastas-caseras.jpg" alt="Menú Ejecutivo Mediodía" class="dish-img" loading="lazy">
+              <span class="dish-badge">Lunes a Viernes</span>
+            </div>
+            <div class="dish-info">
+              <div class="dish-header">
+                <h3 class="dish-name">Menú Ejecutivo Completo</h3>
+                <span class="dish-price">$9.500</span>
+              </div>
+              <p class="dish-desc">
+                Plato principal del día (pastas caseras, milanesa o carne al horno), bebida sin alcohol incluida y café o postre para cerrar el almuerzo.
+              </p>
+              <button class="dish-cta-btn" data-wa-preset="menu_ejecutivo">
+                Consultar Menú de Hoy <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Barra inferior para descargar o ver en Drive -->
+        <div class="menu-footer-bar">
+          <p>¿Buscás la lista completa con precios detallados, opciones sin TACC, coctelería y pastelería?</p>
+          <div class="menu-actions">
+            <button class="btn-carta-pdf" data-open-pdf="noche">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> Ver Carta Noche &amp; Salón (PDF)
+            </button>
+            <button class="btn-carta-pdf" data-open-pdf="dia" style="border-color: rgba(255, 170, 0, 0.4); background: rgba(255, 170, 0, 0.08);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/></svg> Ver Desayunos &amp; Meriendas (PDF)
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================================
+         6. SECCIÓN PRUEBA SOCIAL & COMUNIDAD (RESEÑAS VERIFICADAS)
+         ===================================================================== -->
+    <section id="resenas" class="resenas-section scroll-reveal">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Validación en Vivo</span>
+          <h2 class="section-heading">LO QUE DICEN EN RONDEAU</h2>
+          <p class="hero-subtitle">
+            Más de 1.800 opiniones reales en Google Maps respaldan nuestras porciones de bodegón, la temperatura de las canillas y la calidez del equipo.
+          </p>
+        </div>
+
+        <!-- Caja resumen de puntuación Google -->
+        <div class="resenas-summary-box">
+          <div class="resenas-score-group">
+            <div class="resenas-score-big">4.7</div>
+            <div class="resenas-score-meta">
+              <div class="stars-row">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <h4>Excelente en Google Maps</h4>
+              <p>Basado en más de 1.850 reseñas de clientes reales en Rosario</p>
+            </div>
+          </div>
+
+          <div class="resenas-metrics-strip">
+            <div class="resena-metric-item">
+              <span class="resena-metric-val">12</span>
+              <span class="resena-metric-lbl">Canillas Tiradas</span>
+            </div>
+            <div class="resena-metric-item">
+              <span class="resena-metric-val">08-03 h</span>
+              <span class="resena-metric-lbl">Cocina Corrida</span>
+            </div>
+            <div class="resena-metric-item">
+              <span class="resena-metric-val">100%</span>
+              <span class="resena-metric-lbl">Sin Costo de Reserva</span>
+            </div>
+          </div>
+
+          <a href="https://maps.google.com/?q=Pub+y+Restaurante+Cosme+Alberdi" target="_blank" rel="noopener noreferrer" class="btn-gmaps" style="white-space:nowrap;">
+            Ver Todas las Reseñas <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </a>
+        </div>
+
+        <!-- Grid de 3 Testimonios Clave por Arquetipo -->
+        <div class="resenas-cards-grid">
+          <!-- Tarjeta 1: Festejos y Grupos -->
+          <div class="resena-card">
+            <div>
+              <span class="resena-badge">Festejo de Cumpleaños</span>
+              <div class="stars-row">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <p class="resena-quote">
+                &ldquo;Festejamos un cumple de 18 personas en el sector preferencial. La atención fue impecable, las smash burgers y las torres de papas salieron al toque y nos trajeron el espumante para el brindis de regalo. Cero complicaciones para reservar.&rdquo;
+              </p>
+            </div>
+            <div class="resena-author-box">
+              <div class="resena-avatar">MV</div>
+              <div class="resena-author-info">
+                <h5>Mariana V.</h5>
+                <span>Local Guide en Google Maps · Festejo Grupal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Cerveceros & After -->
+          <div class="resena-card">
+            <div>
+              <span class="resena-badge">Cervecería &amp; Amigos</span>
+              <div class="stars-row">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <p class="resena-quote">
+                &ldquo;La mejor pizarra de canillas de Zona Norte. La IPA Alberdi y la Honey servidas en copón helado con la espuma perfecta. La cascada de cheddar caliente sobre las papas es una bomba. El ambiente con los neones y la música está a otro nivel.&rdquo;
+              </p>
+            </div>
+            <div class="resena-author-box">
+              <div class="resena-avatar">GR</div>
+              <div class="resena-author-info">
+                <h5>Gonzalo R.</h5>
+                <span>Cliente Verificado · Noches de Bulevar</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: Bodegón y Almuerzos -->
+          <div class="resena-card">
+            <div>
+              <span class="resena-badge">Bodegón Abundante</span>
+              <div class="stars-row">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="lucide-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <p class="resena-quote">
+                &ldquo;Comida casera, abundante de verdad y con precios súper razonables. Fuimos a almorzar el fin de semana y con un solo plato comen dos tranquilamente. El café de especialidad post almuerzo cierra la experiencia de diez.&rdquo;
+              </p>
+            </div>
+            <div class="resena-author-box">
+              <div class="resena-avatar">LM</div>
+              <div class="resena-author-info">
+                <h5>Luciana M.</h5>
+                <span>Reseña de Google Maps · Almuerzo en Familia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. RESERVAS & FESTEJOS
+         ===================================================================== -->
+    <section id="festejos" class="festejos-section scroll-reveal">
+      <div class="container">
+        <div class="festejos-box">
+          <div class="festejos-content">
+            <div>
+              <span class="section-tag">Asegurá tu Lugar</span>
+              <h2 class="section-heading">RESERVAS &amp; FESTEJOS</h2>
+              <p class="hero-subtitle" style="text-align: left; margin: 0 0 16px;">
+                Almuerzos de trabajo, meriendas, cenas con amigos y celebraciones de cumpleaños en salón o vereda.
+              </p>
+
+              <ul class="festejos-perks">
+                <li>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <span><strong>Paquetes de Comida Libre:</strong> Pizzas artesanales, papas cheddar con panceta y sándwiches gourmet para que nadie se quede con hambre.</span>
+                </li>
+                <li>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <span><strong>Brindis con espumante de regalo:</strong> Botellas de cortesía para el agasajado y su mesa en cumpleaños.</span>
+                </li>
+                <li>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <span><strong>Noches de fiesta:</strong> DJ en vivo los fines de semana, ambientación con cotillón LED y sector preferencial unificado.</span>
+                </li>
+              </ul>
+
+              <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+                <button class="btn-kraft-torn" data-open-modal="reserva" style="cursor: pointer;">
+                  Reservar Mesa Ahora <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </button>
+                <a href="https://compras.evento-simple.com/cosme" target="_blank" rel="noopener noreferrer" class="btn-gmaps" style="display:inline-flex; align-items:center; gap:8px;">
+                  Entradas para Eventos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Calculador Interactivo de Festejo -->
+            <div class="festejos-calculator">
+              <label for="calc-guests-range" class="calc-label">
+                Calculá para tu grupo: <span id="calc-guests-count" style="color:var(--neon-amber); font-weight:800;">12 personas</span>
+              </label>
+              <input type="range" id="calc-guests-range" class="calc-range" min="4" max="40" value="12" step="1">
+
+              <div class="calc-summary">
+                <p style="font-weight:700; margin-bottom:4px; color:var(--text-main);">Beneficio para tu grupo:</p>
+                <p id="calc-benefit-text" style="color:var(--text-muted); line-height:1.4;">
+                  ¡Brindis con espumante de regalo para el cumpleañero + Sector preferencial!
+                </p>
+              </div>
+
+              <button id="calc-wa-btn" class="calc-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon" fill="currentColor" stroke="none"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c.969.531 1.771.82 2.806.82 3.18 0 5.767-2.587 5.767-5.766.001-3.181-2.585-5.767-5.767-5.767zm7.969 5.766c-.003 4.418-3.586 8.002-8 8.002-1.398 0-2.709-.364-3.847-1.002l-4.153 1.089 1.109-4.047c-.718-1.205-1.109-2.587-1.109-4.042.003-4.418 3.586-8.002 8-8.002 4.417.001 8 3.585 8 8.002z"/></svg> Reservar Festejo por WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         6. UBICACIÓN Y MAPA INTERACTIVO
+         ===================================================================== -->
+    <section id="ubicacion" class="ubicacion-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Cómo Llegar</span>
+          <h2 class="section-heading">EN EL CORAZÓN DE ALBERDI</h2>
+          <p class="hero-subtitle">
+            Sobre el bulevar más emblemático de la Zona Norte rosarina, a minutos del río Paraná y los clubes náuticos.
+          </p>
+        </div>
+
+        <div class="ubicacion-grid">
+          <!-- Tarjeta de información -->
+          <div class="ubicacion-info-card">
+            <div>
+              <div class="info-row">
+                <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <div class="info-text">
+                  <h4>Dirección</h4>
+                  <p>Boulevard Rondeau 1602 (esquina Puccio), Barrio Alberdi, Rosario, Santa Fe.</p>
+                </div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                <div class="info-text">
+                  <h4>Horarios de Atención</h4>
+                  <p>Lunes a Domingos de 08:00 h a 03:00 h (Cocina abierta de corrido).</p>
+                </div>
+              </div>
+
+              <div class="info-row">
+                <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <div class="info-text">
+                  <h4>Estacionamiento &amp; Accesos</h4>
+                  <p>Fácil estacionamiento en dársenas y calles aledañas. Líneas de colectivo: 102, 103, 107, 143.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://maps.google.com/?q=Pub+y+Restaurante+Cosme+Alberdi" target="_blank" rel="noopener noreferrer" class="btn-gmaps">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> Abrir en Google Maps / Cómo llegar
+            </a>
+          </div>
+
+          <!-- Mapa estilizado integrado -->
+          <div class="map-wrapper">
+            <iframe 
+              class="map-iframe"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.5290463284055!2d-60.69344572370725!3d-32.897903573613045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b653b2907ba5f7%3A0xd3cf03ec42bd960!2sPub%20y%20Restaurante%20%22Cosme%22%20%7C%20Alberdi!5e0!3m2!1ses!2sar!4v1710000000000!5m2!1ses!2sar"
+              title="Ubicación de Cosme Alberdi en Google Maps"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       8. FOOTER
+       ===================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#inicio" class="footer-lockup-box" aria-label="Cosme Alberdi Inicio">
+            <img src="assets/cosme-lockup-horizontal-amber.png" alt="Cosme Alberdi Gastrobar" class="footer-lockup-night" height="54">
+            <img src="assets/cosme-lockup-horizontal-black.png" alt="Cosme Alberdi Gastrobar" class="footer-lockup-day" height="54">
+          </a>
+          <p>
+            Pub, restaurante y cervecería artesanal sobre Boulevard Rondeau. El clásico de barrio que reúne a toda la Zona Norte de Rosario.
+          </p>
+          
+        </div>
+
+        <div class="footer-col">
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#menu">Cartas &amp; Canillas</a></li>
+            <li><a href="#resenas">Opiniones</a></li>
+            <li><a href="#festejos">Reservas &amp; Festejos</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Reservas &amp; Redes</h5>
+          <ul>
+            <li><a href="https://www.instagram.com/cosme.alberdi" target="_blank" rel="noopener noreferrer">Instagram (@cosme.alberdi)</a></li>
+            <li><a href="https://wa.me/5493416802275" target="_blank" rel="noopener noreferrer">WhatsApp Directo</a></li>
+            <li><a href="https://compras.evento-simple.com/cosme" target="_blank" rel="noopener noreferrer">Entradas Eventos</a></li>
+            <li><a href="https://linktr.ee/COSMEALBERDI" target="_blank" rel="noopener noreferrer">Linktree Oficial</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Horario de Salón</h5>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6;">
+            Lunes a Domingos<br>
+            <strong>08:00 h a 03:00 h</strong><br>
+            Desayunos, almuerzos, meriendas, cenas y tragos.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Cosme Alberdi. Todos los derechos reservados. Rosario, Santa Fe.</span>
+        <span>Bv. Rondeau 1602 · Tel: +54 9 341 680-2275</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       9. WIDGET FLOTANTE DE WHATSAPP
+       ===================================================================== -->
+  <div class="floating-whatsapp">
+    <div id="floating-wa-menu" class="floating-wa-menu">
+      <div class="wa-menu-title">¿Qué necesitás consultar?</div>
+      <a href="#" class="wa-quick-item" data-wa-preset="reservar_mesa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg> <span>Reservar mesa</span>
+      </a>
+      <a href="#" class="wa-quick-item" data-wa-preset="cumpleanos">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12v0c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11v0c-.11.7-.7 1.22-1.4 1.22H17"/><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98v0C9.52 4.91 9 5.5 9 6.2V7"/></svg> <span>Festejar cumpleaños</span>
+      </a>
+      <a href="#" class="wa-quick-item" data-wa-preset="menu_ejecutivo">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"/><path d="M15 11v11"/><path d="M6 2v20"/><path d="M9 2v4a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"/></svg> <span>Menú del día</span>
+      </a>
+      <a href="#" class="wa-quick-item" data-wa-preset="take_away">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> <span>Pedir Take Away</span>
+      </a>
+    </div>
+
+    <button id="floating-wa-btn" class="floating-wa-btn" aria-label="Abrir opciones de WhatsApp">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- =====================================================================
+       10. MODAL: FORMULARIO RÁPIDO DE RESERVA
+       ===================================================================== -->
+  <div id="modal-reserva" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-res-title">
+    <div class="modal-window">
+      <button class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+      <h3 id="modal-res-title" class="modal-title">RESERVAR MESA</h3>
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">
+        Elegí tu horario de llegada preferido y disfrutá la mesa sin turnos ni apuros. Te derivamos a WhatsApp para confirmar al instante.
+      </p>
+
+      <form id="form-modal-reserva">
+        <div class="form-group">
+          <label for="res-nombre" class="form-label">Tu Nombre y Apellido:</label>
+          <input type="text" id="res-nombre" class="form-input" placeholder="Ej: Santiago Pérez" required>
+        </div>
+
+        <div class="form-group">
+          <label for="res-personas" class="form-label">Cantidad de personas:</label>
+          <select id="res-personas" class="form-select">
+            <option value="2 personas">2 personas</option>
+            <option value="3 a 4 personas" selected>3 a 4 personas</option>
+            <option value="5 a 8 personas">5 a 8 personas</option>
+            <option value="Más de 8 personas">Más de 8 personas (Grupo)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="res-fecha" class="form-label">Fecha deseada:</label>
+          <input type="date" id="res-fecha" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="res-horario" class="form-label">Horario deseado de llegada:</label>
+          <select id="res-horario" class="form-select">
+            <optgroup label="Almuerzo">
+              <option value="12:30 hs">12:30 hs</option>
+              <option value="13:00 hs">13:00 hs</option>
+              <option value="13:30 hs">13:30 hs</option>
+              <option value="14:00 hs">14:00 hs</option>
+              <option value="14:30 hs">14:30 hs</option>
+            </optgroup>
+            <optgroup label="Tarde / Merienda">
+              <option value="17:00 hs">17:00 hs</option>
+              <option value="18:00 hs">18:00 hs</option>
+              <option value="19:00 hs">19:00 hs</option>
+              <option value="20:00 hs">20:00 hs</option>
+            </optgroup>
+            <optgroup label="Cena / Noche">
+              <option value="20:30 hs">20:30 hs</option>
+              <option value="21:00 hs" selected>21:00 hs</option>
+              <option value="21:30 hs">21:30 hs</option>
+              <option value="22:00 hs">22:00 hs</option>
+              <option value="22:30 hs">22:30 hs</option>
+              <option value="23:00 hs">23:00 hs</option>
+              <option value="23:30 hs">23:30 hs</option>
+              <option value="00:00 hs en adelante">00:00 hs en adelante</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-submit-modal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon" fill="currentColor" stroke="none"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c.969.531 1.771.82 2.806.82 3.18 0 5.767-2.587 5.767-5.766.001-3.181-2.585-5.767-5.767-5.767zm7.969 5.766c-.003 4.418-3.586 8.002-8 8.002-1.398 0-2.709-.364-3.847-1.002l-4.153 1.089 1.109-4.047c-.718-1.205-1.109-2.587-1.109-4.042.003-4.418 3.586-8.002 8-8.002 4.417.001 8 3.585 8 8.002z"/></svg> Confirmar Reserva por WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       11. MODAL: VISOR DE CARTA DIGITAL IN-PAGE
+       ===================================================================== -->
+  <div id="modal-carta" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-carta-title">
+    <div class="modal-window modal-window-pdf">
+      <!-- Modal Header -->
+      <div class="modal-pdf-header">
+        <div class="modal-pdf-titles">
+          <div class="modal-pdf-badge" id="modal-pdf-badge">CARTA SALÓN &amp; NOCHE</div>
+          <h3 id="modal-carta-title" class="modal-title" style="margin:0; font-size:1.15rem;">CARTA DIGITAL COSME</h3>
+        </div>
+
+        <!-- Selector de Carta (Noche vs Día) -->
+        <div class="pdf-switch-tabs">
+          <button type="button" class="pdf-switch-tab active" data-pdf-doc="noche">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg> Carta Salón &amp; Noche
+          </button>
+          <button type="button" class="pdf-switch-tab" data-pdf-doc="dia">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg> Desayunos &amp; Meriendas
+          </button>
+        </div>
+
+        <div class="modal-pdf-actions">
+          <a id="modal-pdf-download-link" href="assets/docs/carta-noche.pdf" download="Carta_Cosme_Alberdi_Noche.pdf" class="btn-pdf-action" title="Descargar archivo PDF oficial">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            <span class="btn-pdf-action-text">Descargar PDF</span>
+          </a>
+          <button class="modal-close-btn" aria-label="Cerrar visor de carta">&times;</button>
+        </div>
+      </div>
+
+      <!-- Iframe Contenedor del PDF sin salir de la web -->
+      <div class="modal-pdf-body">
+        <iframe 
+          id="pdf-frame" 
+          src="https://drive.google.com/file/d/1r6Pmaf6tBvK8j-wzST7jegs-poxu5HXt/preview" 
+          title="Visor de Carta Digital Cosme Alberdi" 
+          class="pdf-embed-frame"
+          allow="autoplay">
+        </iframe>
+      </div>
+
+      <!-- Footer rápido del visor -->
+      <div class="modal-pdf-footer">
+        <span class="pdf-footer-note">Visualización directa in-page · Documento oficial actualizado</span>
+        <button class="btn-nav-reserve" data-open-modal="reserva" style="padding: 7px 16px; font-size: 0.82rem;">
+          Reservar Mesa
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       12. BARRA FIJA MÓVIL EN LA ZONA DEL PULGAR (STICKY BOTTOM BAR - CRO)
+       ===================================================================== -->
+  <nav class="mobile-sticky-bar" aria-label="Acciones rápidas móviles de conversión">
+    <a href="#menu" class="sticky-bar-btn sticky-bar-btn--secondary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+      <span>Ver Carta</span>
+    </a>
+
+    <button class="sticky-bar-btn sticky-bar-btn--primary" data-open-modal="reserva">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+      </svg>
+      <span>Reservar Mesa</span>
+    </button>
+
+    <a href="https://www.pedidosya.com.ar/restaurantes/rosario/cosme-alberdi-menu" target="_blank" rel="noopener noreferrer" class="sticky-bar-btn sticky-bar-btn--delivery">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4"/><path d="M12 16V8"/></svg>
+      <span>PedidosYa</span>
+    </a>
+  </nav>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,527 @@
+/* ==========================================================================
+   COSME ALBERDI — SECTIONS (HERO, BENTO, TABS MENU, UBICACIÓN & FOOTER)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION (SCROLLABLE & OPEN)
+   -------------------------------------------------------------------------- */
+.hero-reference {
+  position: relative;
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0 100px;
+}
+
+/* Cono de luz carmesí del neón sobre la pared de ladrillos en el Hero */
+.hero-reference::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 950px;
+  max-width: 90vw;
+  height: 580px;
+  background: radial-gradient(ellipse at center, rgba(255, 30, 39, 0.40) 0%, rgba(255, 30, 39, 0.12) 42%, transparent 72%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-reference-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cartel de Neón "COSME" Realista Tubular Doble de la Referencia */
+.neon-hero-artwork-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.neon-hero-artwork {
+  display: block;
+  max-width: 580px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 35px rgba(255, 30, 39, 0.85)) drop-shadow(0 0 14px rgba(255, 30, 39, 0.95));
+  user-select: none;
+  transition: transform 300ms ease, filter 300ms ease;
+}
+
+.neon-hero-artwork:hover {
+  filter: drop-shadow(0 0 45px rgba(255, 30, 39, 1)) drop-shadow(0 0 18px rgba(255, 50, 60, 1));
+  transform: scale(1.02);
+}
+
+.hero-ref-title {
+  font-family: var(--font-headline);
+  font-size: clamp(2.2rem, 4.8vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-headline);
+  max-width: 860px;
+  margin: 14px auto 0;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.85);
+}
+
+.hero-ref-subtitle {
+  font-family: var(--font-ui);
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  color: var(--text-sub);
+  line-height: 1.6;
+  max-width: 660px;
+  margin: 18px auto 0;
+  font-weight: 400;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.hero-footer-row {
+  width: 100%;
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 24px;
+}
+
+.hero-stamp-anchor {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@media (max-width: 1080px) {
+  .hero-footer-row {
+    flex-direction: column;
+    margin-top: 48px;
+    gap: 22px;
+  }
+  .hero-stamp-anchor {
+    position: static;
+    margin-bottom: 8px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. SECCIÓN: BENTO GRID ("EL ESPACIO")
+   -------------------------------------------------------------------------- */
+.section-bento {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title-wrap {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--neon-amber);
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.section-heading {
+  font-family: var(--font-headline);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+}
+
+.section-subtext {
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+  color: var(--text-sub);
+  max-width: 600px;
+  margin: 10px auto 0;
+}
+
+.bento-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 290px;
+  gap: 24px;
+}
+
+.bento-card-space {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #15161C;
+  border: 1.5px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease, border-color 300ms ease;
+  cursor: pointer;
+}
+
+/* Micro-interacción: scale-105 + sutil box-shadow rojo */
+.bento-card-space:hover {
+  transform: scale(1.05);
+  z-index: 5;
+  border-color: rgba(255, 30, 39, 0.65);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.85), 0 0 30px rgba(255, 30, 39, 0.45);
+}
+
+.bento-img-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.bento-card-space:hover .bento-img-bg {
+  transform: scale(1.08);
+}
+
+.bento-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13, 14, 17, 0.15) 0%, rgba(13, 14, 17, 0.88) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px 28px;
+  z-index: 2;
+}
+
+.bento-card-title {
+  font-family: var(--font-headline);
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.bento-card-desc {
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  color: #D2CBC5;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* Grid asimétrico de 4 tarjetas */
+.bento-col-7 {
+  grid-column: span 7;
+  grid-row: span 2;
+}
+.bento-col-5 {
+  grid-column: span 5;
+}
+.bento-col-5-b {
+  grid-column: span 5;
+}
+.bento-col-12 {
+  grid-column: span 12;
+}
+
+@media (max-width: 900px) {
+  .bento-col-7,
+  .bento-col-5,
+  .bento-col-5-b,
+  .bento-col-12 {
+    grid-column: span 12;
+    grid-row: span 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. SECCIÓN: MENÚ (TABS INTERACTIVAS DÍA & NOCHE)
+   -------------------------------------------------------------------------- */
+.section-menu-tabs {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.menu-tabs-header {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.menu-tab-btn {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  background: #14151B;
+  color: #A9A9B2;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.menu-tab-btn:hover {
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Tab Día Activa */
+.menu-tab-btn[data-mode="day"].is-active {
+  background: var(--kraft-bg);
+  color: var(--kraft-text);
+  border-color: var(--kraft-border);
+  box-shadow: 0 4px 18px rgba(201, 178, 153, 0.45);
+}
+
+/* Tab Noche Activa */
+.menu-tab-btn[data-mode="night"].is-active {
+  background: #181113;
+  color: #FFFFFF;
+  border-color: var(--neon-red);
+  box-shadow: 0 0 20px var(--neon-red-glow), inset 0 0 10px rgba(255, 30, 39, 0.25);
+}
+
+.menu-grid-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* Grilla Clara de Día (Kraft / Arena) */
+.menu-card-day {
+  background: #FAF5EE;
+  color: #241A14;
+  border: 1.5px solid #D5C2AA;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--trans-fast);
+}
+
+.menu-card-day {
+  background: rgba(247, 242, 235, 0.96);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(181, 155, 125, 0.35);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--trans-fast), box-shadow var(--trans-fast), border-color var(--trans-fast);
+}
+
+.menu-card-day:hover {
+  transform: translateY(-4px);
+  border-color: #B59B7D;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 170, 0, 0.25);
+}
+
+.menu-card-day h4 {
+  font-family: var(--font-headline);
+  font-size: 1.55rem;
+  letter-spacing: 0.02em;
+  color: #1A120D;
+  line-height: 1.15;
+}
+
+.menu-card-day p {
+  font-size: 0.94rem;
+  color: #5C4B40;
+  margin-top: 10px;
+  line-height: 1.55;
+}
+
+.menu-card-day .price-tag {
+  font-family: var(--font-mono);
+  font-size: 1.10rem;
+  font-weight: 700;
+  color: #9E5B2D;
+  margin-top: 18px;
+  display: block;
+}
+
+/* Grilla Oscura de Noche: Fondo sólido/semitransparente oscuro, más padding, tipografía más grande y borde sutil */
+.menu-card-night {
+  background: rgba(24, 24, 27, 0.94);
+  backdrop-filter: blur(14px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--trans-fast), box-shadow var(--trans-fast), border-color var(--trans-fast);
+}
+
+.menu-card-night:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 30, 39, 0.6);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 30, 39, 0.35);
+}
+
+.menu-card-night h4 {
+  font-family: var(--font-headline);
+  font-size: 1.55rem;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  line-height: 1.15;
+}
+
+.menu-card-night p {
+  font-size: 0.94rem;
+  color: #C2BFBA;
+  margin-top: 10px;
+  line-height: 1.55;
+}
+
+.menu-card-night .price-tag {
+  font-family: var(--font-mono);
+  font-size: 1.10rem;
+  font-weight: 700;
+  color: var(--neon-amber);
+  margin-top: 18px;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   4. SECCIÓN: UBICACIÓN & HORARIOS
+   -------------------------------------------------------------------------- */
+.section-ubicacion {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.ubicacion-box-highlight {
+  background: rgba(18, 19, 25, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .ubicacion-box-highlight {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+  }
+}
+
+.ubicacion-title-big {
+  font-family: var(--font-headline);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  text-transform: uppercase;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.ubicacion-address-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 30, 39, 0.14);
+  border: 1px solid rgba(255, 30, 39, 0.35);
+  color: #FF555B;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.horarios-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  font-size: 1rem;
+  color: #D6D0CA;
+}
+
+.horarios-list strong {
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   5. FOOTER OSCURO CON ISOTIPO CENTRADO
+   -------------------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(to bottom, rgba(9, 10, 13, 0.85) 0%, rgba(9, 10, 13, 0.98) 100%);
+  backdrop-filter: blur(10px);
+  padding: 60px 0 40px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-logo-img {
+  width: 48px;
+  height: 58px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(255, 170, 0, 0.7));
+  transition: transform var(--trans-fast);
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.footer-brand {
+  font-family: var(--font-brand);
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+}
+
+.footer-tagline {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #A09A94;
+}
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #6C6661;
+  margin-top: 12px;
+}

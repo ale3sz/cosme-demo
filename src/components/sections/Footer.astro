@@ -1,0 +1,121 @@
+---
+import { CosmeLogo } from '../branding/CosmeLogo';
+import { Instagram, MessageCircle, Heart, MapPin, Sparkles } from '../ui/Icons';
+---
+
+<footer class="bg-surface-card border-t border-surface-border text-textSecondary pt-16 pb-12 transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- Col 1: Identity & Description -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-12 flex items-center justify-center p-1 rounded-xl bg-black/40 border border-surface-border">
+            <CosmeLogo />
+          </div>
+          <div>
+            <span class="block font-brand text-xl font-black tracking-wider text-textPrimary">
+              COSME ALBERDI
+            </span>
+            <span class="block font-mono text-[10px] text-cosme-amber uppercase tracking-widest">
+              Café & Gastrobar
+            </span>
+          </div>
+        </div>
+
+        <p class="text-xs leading-relaxed text-textSecondary">
+          La esquina donde el café de especialidad de la mañana se transforma en neón rojo, canillas de cerveza artesanal, comida libre y fiesta retro por la noche.
+        </p>
+
+        <div class="flex items-center gap-2 text-xs font-mono text-cosme-red">
+          <MapPin className="w-3.5 h-3.5" />
+          <span>Bv. Rondeau 1602 · Rosario Norte</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links -->
+      <div>
+        <h4 class="font-display text-sm font-bold uppercase tracking-wider text-textPrimary mb-4">
+          Navegación
+        </h4>
+        <ul class="space-y-2 text-xs font-medium">
+          <li>
+            <a href="#hero" class="hover:text-cosme-red transition-colors">Inicio</a>
+          </li>
+          <li>
+            <a href="#el-lugar" class="hover:text-cosme-red transition-colors">El Taller & El Club</a>
+          </li>
+          <li>
+            <a href="#menu-interactivo" class="hover:text-cosme-red transition-colors">Carta Día & Noche</a>
+          </li>
+          <li>
+            <a href="#festejos-dj" class="hover:text-cosme-red transition-colors">Fiestas & Cumpleaños</a>
+          </li>
+          <li>
+            <a href="#cartas-pdf" class="hover:text-cosme-red transition-colors">Cartas en PDF</a>
+          </li>
+          <li>
+            <a href="#ubicacion" class="hover:text-cosme-red transition-colors">Ubicación y Horarios</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Gastronomía & Fiestas -->
+      <div>
+        <h4 class="font-display text-sm font-bold uppercase tracking-wider text-textPrimary mb-4">
+          Hits de la Casa
+        </h4>
+        <ul class="space-y-2 text-xs font-mono text-textSecondary">
+          <li>· Cascada de Queso Cheddar Caliente</li>
+          <li>· Milanesa Libre en Torre (4+ pers.)</li>
+          <li>· Carlitos Rosarinos de Vacío 6 hs</li>
+          <li>· Sushi Flambeado en Barra con Soplete</li>
+          <li>· Torres de Merienda de 3 Pisos</li>
+          <li>· 12 Canillas de Birra Tirada Artesanal</li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Redes & Reservas -->
+      <div>
+        <h4 class="font-display text-sm font-bold uppercase tracking-wider text-textPrimary mb-4">
+          Conectá con Cosme
+        </h4>
+        <p class="text-xs text-textSecondary mb-4">
+          Seguinos en redes para enterarte de los DJs del fin de semana, promos sorpresa y fechas de eventos.
+        </p>
+
+        <div class="flex items-center gap-3">
+          <a
+            href="https://www.instagram.com/cosme.alberdi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#E1306C] hover:text-white border border-white/5 flex items-center justify-center text-textPrimary transition-all duration-300"
+            aria-label="Instagram de Cosme Alberdi"
+          >
+            <Instagram className="w-5 h-5" />
+          </a>
+
+          <a
+            href="https://wa.me/5493416802275?text=Hola%20Cosme%20Alberdi!%20Quiero%20hacer%20una%20consulta."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#25D366] hover:text-white border border-white/5 flex items-center justify-center text-textPrimary transition-all duration-300"
+            aria-label="WhatsApp de Cosme Alberdi"
+          >
+            <MessageCircle className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-surface-border flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-textSecondary">
+      <div>
+        © {new Date().getFullYear()} Cosme Alberdi. Todos los derechos reservados.
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span>Diseñado con pasión rosarina para</span>
+        <span class="text-cosme-red font-bold">Barrio Alberdi</span>
+      </div>
+    </div>
+  </div>
+</footer>

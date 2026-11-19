@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/sections/Header.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import { LinktreeBioHub } from '../components/interactive/LinktreeBioHub';
+import { PdfModal } from '../components/interactive/PdfModal';
+import BentoGrid from '../components/sections/BentoGrid.astro';
+import MenuSection from '../components/sections/MenuSection.astro';
+import VhsPartySection from '../components/sections/VhsPartySection.astro';
+import MenusDownloadSection from '../components/sections/MenusDownloadSection.astro';
+import LocationSection from '../components/sections/LocationSection.astro';
+import Footer from '../components/sections/Footer.astro';
+import { MessageCircle } from '../components/ui/Icons';
+---
+
+<Layout>
+  <!-- Site Fixed Header -->
+  <Header />
+
+  <!-- Main Content Landmark -->
+  <main id="main-content" class="relative z-10">
+    <!-- 1. Hero Section -->
+    <HeroSection />
+
+    <!-- 2. Hub de Enlaces Oficiales (Reemplazo Oficial de Linktree con PDFs & Eventos) -->
+    <LinktreeBioHub client:load />
+
+    <!-- 3. Bento Grid: El Taller & El Club -->
+    <BentoGrid />
+
+    <!-- 3. Menú Interactivo en Tabs -->
+    <MenuSection />
+
+    <!-- 4. Fiestas Retro, Cabina DJ VHS & Cotizador de Cumpleaños -->
+    <VhsPartySection />
+
+    <!-- 5. Descarga de Cartas & Pedidos -->
+    <MenusDownloadSection />
+
+    <!-- 6. Ubicación con Espíritu Rosarino -->
+    <LocationSection />
+  </main>
+
+  <!-- Site Footer -->
+  <Footer />
+
+  <!-- Mobile Floating Sticky WhatsApp Button -->
+  <aside class="fixed bottom-5 right-5 z-40 sm:hidden">
+    <a
+      href="https://wa.me/5493416802275?text=Hola%20Cosme%20Alberdi!%20Quiero%20hacer%20una%20reserva."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Abrir chat de WhatsApp para reservar mesa"
+      class="flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-[0_0_25px_rgba(37,211,102,0.5)] active:scale-95 transition-transform"
+    >
+      <MessageCircle className="w-7 h-7 fill-current" />
+    </a>
+  </aside>
+  <!-- PDF Interactive Viewer Modal -->
+  <PdfModal client:load />
+</Layout>

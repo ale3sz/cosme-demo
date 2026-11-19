@@ -1,0 +1,132 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* ==========================================================================
+   COSME ALBERDI — CSS DESIGN TOKENS (NIGHT & DAY)
+   ========================================================================== */
+
+:root,
+[data-theme="night"] {
+  --color-bg-canvas: #0B0B0D;
+  --color-surface-card: #141418;
+  --color-surface-card-hover: #1c1c24;
+  --color-surface-border: #26272E;
+  --color-surface-border-subtle: #1C1D22;
+  
+  --color-text-primary: #F9FAFB;
+  --color-text-secondary: #9CA3AF;
+  --color-text-muted: #6B7280;
+
+  --color-neon-red: #FF1E27;
+  --color-neon-red-glow: rgba(255, 30, 39, 0.35);
+  --color-neon-amber: #FFAA00;
+  --color-neon-amber-glow: rgba(255, 170, 0, 0.35);
+  --color-cheddar: #F5B727;
+  --color-hop: #288062;
+  
+  --badge-bg: rgba(255, 30, 39, 0.12);
+  --badge-border: rgba(255, 30, 39, 0.35);
+  --badge-text: #FF666C;
+
+  color-scheme: dark;
+}
+
+[data-theme="day"] {
+  --color-bg-canvas: #F7F3EB;
+  --color-surface-card: #FFFFFF;
+  --color-surface-card-hover: #FDFBF7;
+  --color-surface-border: #E5DEC9;
+  --color-surface-border-subtle: #EDE7D8;
+  
+  --color-text-primary: #1F1D1A;
+  --color-text-secondary: #575249;
+  --color-text-muted: #8A8275;
+
+  --color-neon-red: #C86D51; /* Terracota cálido tostado */
+  --color-neon-red-glow: rgba(200, 109, 81, 0.2);
+  --color-neon-amber: #288062; /* Verde lúpulo fresco */
+  --color-neon-amber-glow: rgba(40, 128, 98, 0.2);
+  --color-cheddar: #D98200;
+  --color-hop: #288062;
+
+  --badge-bg: rgba(40, 128, 98, 0.1);
+  --badge-border: rgba(40, 128, 98, 0.3);
+  --badge-text: #1E664E;
+
+  color-scheme: light;
+}
+
+/* Base Body Smoothing */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg-canvas);
+  color: var(--color-text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Subtle Film Grain Noise Overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Focus styles accessible */
+:focus-visible {
+  outline: 2px solid var(--color-neon-red);
+  outline-offset: 3px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-red);
+}
+
+/* Neon Glow utilities */
+.glow-red {
+  text-shadow: 0 0 10px rgba(255, 30, 39, 0.7), 0 0 20px rgba(255, 30, 39, 0.4);
+}
+.glow-amber {
+  text-shadow: 0 0 10px rgba(255, 170, 0, 0.7), 0 0 20px rgba(255, 170, 0, 0.4);
+}
+.box-glow-red {
+  box-shadow: 0 0 25px rgba(255, 30, 39, 0.35), inset 0 0 15px rgba(255, 30, 39, 0.15);
+}
+
+/* Scanline Effect for VHS */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.35) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+}

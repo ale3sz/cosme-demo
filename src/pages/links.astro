@@ -1,0 +1,263 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CosmeLogo } from '../components/branding/CosmeLogo';
+import { IndustrialSwitch } from '../components/interactive/IndustrialSwitch';
+import { Ticket, FileText, MessageCircle, Instagram, ExternalLink, MapPin, Sparkles, Flame, Compass, ArrowRight } from '../components/ui/Icons';
+---
+
+<Layout 
+  title="Cosme Alberdi — Links Oficiales, Entradas & Menú" 
+  description="Accesos directos oficiales de Cosme Alberdi: Entradas a eventos, carta digital en Google Drive, reservas por WhatsApp e Instagram. Bv. Rondeau 1602, Rosario."
+>
+  <div class="min-h-screen py-12 px-4 flex flex-col items-center justify-between max-w-md mx-auto">
+    <!-- Top Theme Switch & Navigation -->
+    <div class="w-full flex items-center justify-between mb-8">
+      <a 
+        href="/"
+        class="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase text-textSecondary hover:text-cosme-red transition-colors"
+      >
+        <span>← Ver Web Completa</span>
+      </a>
+      <IndustrialSwitch client:load />
+    </div>
+
+    <!-- Profile Header (Linktree Style) -->
+    <div class="text-center flex flex-col items-center mb-8">
+      <!-- Avatar with Glow -->
+      <div class="relative mb-4">
+        <div class="w-24 h-24 rounded-full bg-surface-card border-2 border-cosme-red p-3 flex items-center justify-center shadow-[0_0_25px_rgba(255,30,39,0.35)]">
+          <CosmeLogo client:load size={50} />
+        </div>
+        <span class="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-[#25D366] border-2 border-surface-card flex items-center justify-center shadow-md">
+          <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+        </span>
+      </div>
+
+      <!-- Handle & Title -->
+      <h1 class="font-brand text-2xl font-black text-textPrimary tracking-wider uppercase mb-1">
+        COSME ALBERDI
+      </h1>
+      <span class="font-mono text-xs text-cosme-red font-bold tracking-widest uppercase mb-2">
+        @cosme.alberdi
+      </span>
+
+      <!-- Bio exact from Linktree -->
+      <p class="font-mono text-xs text-textSecondary uppercase tracking-wider flex items-center gap-1.5 justify-center">
+        <MapPin className="w-3.5 h-3.5 text-cosme-amber shrink-0" />
+        <span>BV. RONDEAU 1602 · ROSARIO · ARGENTINA</span>
+      </p>
+    </div>
+
+    <!-- Linktree Links Stack -->
+    <div class="w-full space-y-3.5 mb-10">
+      <!-- 1. ENTRADAS EVENTOS (High Priority with Live Banner) -->
+      <a
+        href="https://compras.evento-simple.com/cosme"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group relative block w-full p-4 rounded-2xl bg-gradient-to-r from-[#2B1015] to-surface-card border-2 border-cosme-red shadow-[0_0_25px_rgba(255,30,39,0.3)] hover:shadow-[0_0_35px_rgba(255,30,39,0.6)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+      >
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-cosme-red/20 border border-cosme-red/50 flex items-center justify-center text-cosme-red">
+              <Ticket className="w-5 h-5" />
+            </div>
+            <div class="text-left">
+              <div class="flex items-center gap-2">
+                <span class="font-display text-sm font-black text-white group-hover:text-cosme-red transition-colors">
+                  ENTRADAS EVENTOS
+                </span>
+                <span class="px-1.5 py-0.2 rounded text-[9px] font-mono font-bold uppercase bg-cosme-red text-white animate-pulse">
+                  Venta
+                </span>
+              </div>
+              <span class="block text-[11px] text-[#FFAA00] font-semibold leading-tight">
+                Barley Fest · Dom 22/11 (Víspera Feriado)
+              </span>
+            </div>
+          </div>
+          <ExternalLink className="w-4 h-4 text-white/50 group-hover:text-white shrink-0" />
+        </div>
+      </a>
+
+      <!-- 2. CARTA GENERAL, NOCHE & SALÓN (PDF Oficial) -->
+      <a
+        href="https://drive.google.com/file/d/1r6Pmaf6tBvK8j-wzST7jegs-poxu5HXt/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group block w-full p-4 rounded-2xl bg-surface-card border border-surface-border hover:border-cosme-red shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+      >
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-cosme-red/15 border border-cosme-red/30 flex items-center justify-center text-cosme-red">
+              <FileText className="w-5 h-5" />
+            </div>
+            <div class="text-left">
+              <div class="flex items-center gap-2">
+                <span class="block font-display text-sm font-black text-textPrimary group-hover:text-cosme-red transition-colors">
+                  CARTA GENERAL & NOCHE (PDF)
+                </span>
+                <span class="px-1.5 py-0.2 rounded text-[9px] font-mono font-bold uppercase bg-cosme-red/20 text-cosme-red">
+                  Salón 2026
+                </span>
+              </div>
+              <span class="block text-[11px] text-textSecondary">
+                Parrilla libre, smash cheddar, hamburguesas y birra
+              </span>
+            </div>
+          </div>
+          <ExternalLink className="w-4 h-4 text-white/50 group-hover:text-white shrink-0" />
+        </div>
+      </a>
+
+      <!-- 3. DESAYUNOS, CAFETERÍA & MERIENDAS (PDF Oficial) -->
+      <a
+        href="https://drive.google.com/file/d/1X0_n1wfn8lNFb6mAV4BZjV-Zevl-YU_N/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group block w-full p-4 rounded-2xl bg-surface-card border border-surface-border hover:border-cosme-hop shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+      >
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-cosme-hop/15 border border-cosme-hop/30 flex items-center justify-center text-cosme-hop">
+              <FileText className="w-5 h-5" />
+            </div>
+            <div class="text-left">
+              <div class="flex items-center gap-2">
+                <span class="block font-display text-sm font-black text-textPrimary group-hover:text-cosme-hop transition-colors">
+                  DESAYUNOS & MERIENDAS (PDF)
+                </span>
+                <span class="px-1.5 py-0.2 rounded text-[9px] font-mono font-bold uppercase bg-cosme-hop/20 text-cosme-hop">
+                  Diurno
+                </span>
+              </div>
+              <span class="block text-[11px] text-textSecondary">
+                Torres de 3 pisos, café de especialidad y brunch
+              </span>
+            </div>
+          </div>
+          <ExternalLink className="w-4 h-4 text-white/50 group-hover:text-white shrink-0" />
+        </div>
+      </a>
+
+      <!-- 4. CARPETA COMPLETA EN GOOGLE DRIVE -->
+      <a
+        href="https://drive.google.com/drive/folders/1nQJKftaSDtPjgDU_UEiqetQnh72M2eEz"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group block w-full p-4 rounded-2xl bg-surface-card border border-surface-border hover:border-cosme-amber shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+      >
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-cosme-amber/15 border border-cosme-amber/30 flex items-center justify-center text-cosme-amber">
+              <FileText className="w-5 h-5" />
+            </div>
+            <div class="text-left">
+              <span class="block font-display text-sm font-black text-textPrimary group-hover:text-cosme-amber transition-colors">
+                CARPETA GOOGLE DRIVE OFICIAL
+              </span>
+              <span class="block text-[11px] text-textSecondary">
+                Ver todos los archivos originales de la carta
+              </span>
+            </div>
+          </div>
+          <ExternalLink className="w-4 h-4 text-white/50 group-hover:text-white shrink-0" />
+        </div>
+      </a>
+
+      <!-- 3. WHATSAPP -->
+      <a
+        href="https://wa.me/5493416802275"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group block w-full p-4 rounded-2xl bg-surface-card border border-surface-border hover:border-[#25D366] shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+      >
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#25D366]/15 border border-[#25D366]/30 flex items-center justify-center text-[#25D366]">
+              <MessageCircle className="w-5 h-5" />
+            </div>
+            <div class="text-left">
+              <span class="block font-display text-sm font-black text-textPrimary group-hover:text-[#25D366] transition-colors">
+                WHATSAPP
+              </span>
+              <span class="block text-[11px] text-textSecondary">
+                Reservas directas y consultas (+54 9 341 680-2275)
+              </span>
+            </div>
+          </div>
+          <ExternalLink className="w-4 h-4 text-white/50 group-hover:text-white shrink-0" />
+        </div>
+      </a>
+
+      <!-- 4. INSTAGRAM -->
+      <a
+        href="https://www.instagram.com/cosme.alberdi"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group block w-full p-4 rounded-2xl bg-surface-card border border-surface-border hover:border-[#E1306C] shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+      >
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#E1306C]/15 border border-[#E1306C]/30 flex items-center justify-center text-[#E1306C]">
+              <Instagram className="w-5 h-5" />
+            </div>
+            <div class="text-left">
+              <span class="block font-display text-sm font-black text-textPrimary group-hover:text-[#E1306C] transition-colors">
+                INSTAGRAM
+              </span>
+              <span class="block text-[11px] text-textSecondary">
+                @cosme.alberdi · Fotos, historias y novedades
+              </span>
+            </div>
+          </div>
+          <ExternalLink className="w-4 h-4 text-white/50 group-hover:text-white shrink-0" />
+        </div>
+      </a>
+
+      <!-- 5. UBICACIÓN / CÓMO LLEGAR -->
+      <a
+        href="https://maps.google.com/?q=Boulevard+Rondeau+1602+Rosario+Santa+Fe"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group block w-full p-4 rounded-2xl bg-surface-card border border-surface-border hover:border-white/40 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+      >
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-textPrimary">
+              <Compass className="w-5 h-5 text-cosme-amber" />
+            </div>
+            <div class="text-left">
+              <span class="block font-display text-sm font-black text-textPrimary group-hover:text-white transition-colors">
+                CÓMO LLEGAR
+              </span>
+              <span class="block text-[11px] text-textSecondary">
+                Abrir en Google Maps / Waze
+              </span>
+            </div>
+          </div>
+          <ExternalLink className="w-4 h-4 text-white/50 group-hover:text-white shrink-0" />
+        </div>
+      </a>
+
+      <!-- 6. BOTÓN EXPLORAR LANDING PAGE COMPLETA -->
+      <a
+        href="/"
+        class="group block w-full p-4 rounded-2xl bg-gradient-to-r from-cosme-red to-cosme-redDark text-white shadow-[0_0_25px_rgba(255,30,39,0.3)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] text-center"
+      >
+        <div class="flex items-center justify-center gap-2">
+          <span class="font-display text-sm font-extrabold uppercase tracking-wider">
+            Explorar Web Completa & Cotizador
+          </span>
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </div>
+      </a>
+    </div>
+
+    <!-- Footer of Bio Links -->
+    <div class="text-center font-mono text-[11px] text-textSecondary space-y-1">
+      <p>© {new Date().getFullYear()} Cosme Alberdi · Rosario, Argentina</p>
+      <p class="text-cosme-red font-semibold">Café de Especialidad · Gastrobar · Club</p>
+    </div>
+  </div>
+</Layout>

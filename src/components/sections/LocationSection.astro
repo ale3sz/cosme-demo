@@ -1,0 +1,139 @@
+---
+import { MapPin, Clock, Car, Compass, ExternalLink } from '../ui/Icons';
+---
+
+<section id="ubicacion" class="scroll-mt-24 py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-surface-border">
+  <div class="text-center max-w-3xl mx-auto mb-16">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-cosme-red/10 text-cosme-red border border-cosme-red/20 mb-3">
+      <MapPin className="w-3.5 h-3.5" />
+      Coordenadas Rosarinas
+    </div>
+    <h2 class="font-display text-3xl sm:text-5xl font-black tracking-tight uppercase text-textPrimary mb-4">
+      En el Corazón de Barrio Alberdi
+    </h2>
+    <p class="text-textSecondary text-base sm:text-lg">
+      A pasos del río Paraná y del Puente Rosario-Victoria. Fácil acceso, estacionamiento cómodo sobre el boulevard y líneas de colectivo directas.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+    <!-- Left Column: Location Details & Hours -->
+    <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+      <!-- Address Box -->
+      <div class="p-8 rounded-3xl bg-surface-card border border-surface-border shadow-xl">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="w-12 h-12 rounded-2xl bg-cosme-red/10 border border-cosme-red/20 flex items-center justify-center text-cosme-red shrink-0">
+            <Compass className="w-6 h-6" />
+          </div>
+          <div>
+            <h3 class="font-display text-2xl font-black text-textPrimary">
+              Bv. Rondeau 1602
+            </h3>
+            <p class="text-sm font-mono text-cosme-amber mt-1">
+              Esquina Puccio · Barrio Alberdi, Rosario
+            </p>
+          </div>
+        </div>
+
+        <!-- Schedule -->
+        <div class="space-y-3 pt-6 border-t border-surface-border">
+          <div class="flex items-center gap-2 text-xs font-mono font-bold uppercase text-textSecondary">
+            <Clock className="w-4 h-4 text-cosme-amber" />
+            <span>Horarios de Atención</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div class="p-3 rounded-xl bg-black/20 border border-surface-border">
+              <span class="block font-bold text-textPrimary mb-1">Cafetería & Brunch</span>
+              <span class="text-textSecondary">Mar a Dom: 08:00 a 20:00</span>
+            </div>
+            <div class="p-3 rounded-xl bg-black/20 border border-surface-border">
+              <span class="block font-bold text-cosme-red mb-1">Gastrobar & Club</span>
+              <span class="text-textSecondary">Mié a Dom: 20:00 al cierre</span>
+            </div>
+          </div>
+          <p class="text-[11px] font-mono text-textSecondary/80 text-center pt-2">
+            * Lunes cerrado por descanso del equipo
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Navigation Deep Links -->
+      <div class="p-6 rounded-3xl bg-surface-card border border-surface-border shadow-xl">
+        <span class="block text-xs font-mono font-bold uppercase text-textSecondary mb-4 flex items-center gap-2">
+          <Car className="w-4 h-4 text-cosme-amber" />
+          ¿Cómo querés llegar hoy?
+        </span>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <a
+            href="https://maps.google.com/?q=Boulevard+Rondeau+1602+Rosario+Santa+Fe"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-3 rounded-xl bg-white/5 hover:bg-cosme-red hover:text-white border border-white/5 transition-all text-center flex flex-col items-center gap-1 group"
+          >
+            <span class="text-xs font-display font-bold">Google Maps</span>
+            <ExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100" />
+          </a>
+
+          <a
+            href="https://waze.com/ul?q=Boulevard+Rondeau+1602+Rosario"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-3 rounded-xl bg-white/5 hover:bg-[#33CCFF] hover:text-black border border-white/5 transition-all text-center flex flex-col items-center gap-1 group"
+          >
+            <span class="text-xs font-display font-bold">Waze</span>
+            <ExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100" />
+          </a>
+
+          <a
+            href="https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[formatted_address]=Bv.+Rondeau+1602%2C+Rosario"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-3 rounded-xl bg-white/5 hover:bg-white hover:text-black border border-white/5 transition-all text-center flex flex-col items-center gap-1 group"
+          >
+            <span class="text-xs font-display font-bold">Pedir Uber</span>
+            <ExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Map Embed / Local View -->
+    <div class="lg:col-span-7 rounded-3xl overflow-hidden bg-surface-card border border-surface-border shadow-2xl relative min-h-[420px] flex flex-col">
+      <!-- Google Maps Embed with Lazy Loading & Performance Optimization -->
+      <iframe
+        title="Ubicación de Cosme Alberdi en Google Maps"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.520448100582!2d-60.69340002345097!3d-32.89880097361254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b65342a3cf1397%3A0xd680325492ebef2e!2sBv.%20Gral.%20Rondeau%201602%2C%20S2005%20Rosario%2C%20Santa%20Fe!5e0!3m2!1ses!2sar!4v1710000000000!5m2!1ses!2sar"
+        width="100%"
+        height="100%"
+        style="border:0; min-height: 420px; filter: invert(90%) hue-rotate(180deg) contrast(110%);"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="w-full h-full flex-1"
+      ></iframe>
+
+      <!-- Map Floating Ribbon -->
+      <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-black/85 backdrop-blur-md border border-white/10 flex items-center justify-between text-white">
+        <div class="flex items-center gap-3">
+          <div class="w-3 h-3 rounded-full bg-cosme-red animate-ping"></div>
+          <div>
+            <span class="block text-xs font-display font-bold">Cosme Alberdi en el mapa</span>
+            <span class="block text-[11px] font-mono text-white/60">Bv. Rondeau 1602, Rosario</span>
+          </div>
+        </div>
+
+        <a
+          href="https://maps.google.com/?q=Boulevard+Rondeau+1602+Rosario+Santa+Fe"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="py-1.5 px-3 rounded-lg text-xs font-mono font-bold uppercase bg-cosme-red text-white hover:bg-cosme-redDark transition-colors flex items-center gap-1.5"
+        >
+          <span>Abrir</span>
+          <ExternalLink className="w-3 h-3" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

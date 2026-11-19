@@ -1,0 +1,150 @@
+---
+import { Ticket, FileText, MessageCircle, Instagram, ExternalLink, Sparkles, Flame, MapPin } from '../ui/Icons';
+---
+
+<section id="accesos-rapidos" class="scroll-mt-24 py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+  <div class="text-center mb-10">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-cosme-red/10 text-cosme-red border border-cosme-red/20 mb-3">
+      <Sparkles className="w-3.5 h-3.5" />
+      Hub de Accesos Directos (Bio Link)
+    </div>
+    <h2 class="font-display text-2xl sm:text-4xl font-black uppercase text-textPrimary tracking-tight">
+      Todo Cosme Alberdi en un Solo Toque
+    </h2>
+    <p class="text-textSecondary text-xs sm:text-sm max-w-lg mx-auto mt-2">
+      Los enlaces oficiales de nuestro Linktree oficial reunidos para que reserves, compres entradas o consultes la carta sin rodeos.
+    </p>
+  </div>
+
+  <!-- Link Cards Grid (Linktree Pro UX) -->
+  <div class="space-y-4">
+    <!-- Link 1: ENTRADAS EVENTOS (High Priority with Next Event Highlight) -->
+    <a
+      href="https://compras.evento-simple.com/cosme"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group relative block p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#201014] via-surface-card to-[#201014] border-2 border-cosme-red/70 hover:border-cosme-red shadow-[0_0_30px_rgba(255,30,39,0.25)] hover:shadow-[0_0_45px_rgba(255,30,39,0.5)] transition-all duration-300 hover:scale-[1.01] active:scale-[0.99]"
+    >
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-cosme-red/20 border border-cosme-red/40 flex items-center justify-center text-cosme-red shrink-0 group-hover:scale-110 transition-transform">
+            <Ticket className="w-6 h-6" />
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-display text-base sm:text-lg font-black text-white group-hover:text-cosme-red transition-colors">
+                ENTRADAS EVENTOS & FIESTAS
+              </span>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase bg-cosme-red text-white animate-pulse">
+                En Venta
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-[#FFAA00] font-semibold flex items-center gap-1.5">
+              <Flame className="w-3.5 h-3.5 shrink-0" />
+              <span>Próximo: Barley Fest en Cosme · Domingo 22/11 (Víspera de Feriado)</span>
+            </p>
+            <span class="block text-[11px] text-textSecondary font-mono mt-0.5">
+              Plataforma oficial compras.evento-simple.com/cosme
+            </span>
+          </div>
+        </div>
+        <div class="shrink-0 text-white/50 group-hover:text-white transition-colors">
+          <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+        </div>
+      </div>
+    </a>
+
+    <!-- Link 2: CARTA - MENU (Drive Oficial) -->
+    <a
+      href="https://drive.google.com/drive/folders/1nQJKftaSDtPjgDU_UEiqetQnh72M2eEz"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group block p-5 sm:p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-cosme-amber/60 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.01] active:scale-[0.99]"
+    >
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-cosme-amber/15 border border-cosme-amber/30 flex items-center justify-center text-cosme-amber shrink-0 group-hover:scale-110 transition-transform">
+            <FileText className="w-6 h-6" />
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-display text-base sm:text-lg font-black text-textPrimary group-hover:text-cosme-amber transition-colors">
+                CARTA - MENÚ COMPLETO
+              </span>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase bg-white/10 text-textSecondary">
+                Google Drive Oficial
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-textSecondary">
+              Consultá las cartas actualizadas de Cafetería, Cervecería, Parrilla y Coctelería en formato digital.
+            </p>
+          </div>
+        </div>
+        <div class="shrink-0 text-white/50 group-hover:text-white transition-colors">
+          <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+        </div>
+      </div>
+    </a>
+
+    <!-- Link 3: WHATSAPP RESERVAS -->
+    <a
+      href="https://wa.me/5493416802275?text=Hola%20Cosme%20Alberdi!%20Vengo%20desde%20su%20p%C3%A1gina%20web%20para%20hacer%20una%20reserva."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group block p-5 sm:p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-[#25D366]/60 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.01] active:scale-[0.99]"
+    >
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-[#25D366]/15 border border-[#25D366]/30 flex items-center justify-center text-[#25D366] shrink-0 group-hover:scale-110 transition-transform">
+            <MessageCircle className="w-6 h-6" />
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-display text-base sm:text-lg font-black text-textPrimary group-hover:text-[#25D366] transition-colors">
+                WHATSAPP · RESERVAS & CONSULTAS
+              </span>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase bg-[#25D366]/20 text-[#25D366]">
+                Respuesta Rápida
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-textSecondary">
+              Chateá directamente con nuestro equipo: reservas de mesa, cotizaciones de cumpleaños y eventos privados.
+            </p>
+          </div>
+        </div>
+        <div class="shrink-0 text-white/50 group-hover:text-white transition-colors">
+          <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+        </div>
+      </div>
+    </a>
+
+    <!-- Link 4: INSTAGRAM OFICIAL -->
+    <a
+      href="https://www.instagram.com/cosme.alberdi"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group block p-5 sm:p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-[#E1306C]/60 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.01] active:scale-[0.99]"
+    >
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-[#E1306C]/15 border border-[#E1306C]/30 flex items-center justify-center text-[#E1306C] shrink-0 group-hover:scale-110 transition-transform">
+            <Instagram className="w-6 h-6" />
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-display text-base sm:text-lg font-black text-textPrimary group-hover:text-[#E1306C] transition-colors">
+                INSTAGRAM OFICIAL (@cosme.alberdi)
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-textSecondary">
+              Fotos del salón, line-up semanal de DJs, novedades gastronómicas e historias en vivo.
+            </p>
+          </div>
+        </div>
+        <div class="shrink-0 text-white/50 group-hover:text-white transition-colors">
+          <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+        </div>
+      </div>
+    </a>
+  </div>
+</section>

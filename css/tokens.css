@@ -1,0 +1,53 @@
+/* ==========================================================================
+   COSME ALBERDI — DESIGN TOKENS (VINTAGE + NEÓN REFERENCE SPEC)
+   Strictly adheres to user reference image: rustic dark brick, realistic red neon,
+   amber logo, zero purples/violets, flat minimalist day/night toggle.
+   ========================================================================== */
+
+:root {
+  /* --- PALETA BASE DE LA REFERENCIA --- */
+  --bg-dark: #0D0E11;
+  --bg-header: rgba(13, 14, 17, 0.94);
+  --brick-tint: #1C1210;
+
+  /* Neón Rojo Tubular Realista (CSS Glow Calibrado) */
+  --neon-red: #FF1E27;
+  --neon-red-core: #FFF0F0;
+  --neon-red-glow: rgba(255, 30, 39, 0.65);
+  --neon-red-ambient: rgba(255, 30, 39, 0.22);
+
+  /* Neón Ámbar (Isotipo Mascota) */
+  --neon-amber: #FFAA00;
+  --neon-amber-glow: rgba(255, 170, 0, 0.55);
+
+  /* Kraft / Cartón Vintage (Botón Explorar Cartas) */
+  --kraft-bg: #C9B299;
+  --kraft-hover: #D8C3AC;
+  --kraft-text: #1A130E;
+  --kraft-border: #A88F74;
+
+  /* Textos Principales */
+  --text-white: #FFFFFF;
+  --text-headline: #F7EFE8;
+  --text-sub: #C8BDB6;
+  --text-muted: #8E827B;
+
+  /* Tipografías */
+  --font-brand: 'Alfa Slab One', cursive, serif;
+  --font-headline: 'Anton', 'Impact', sans-serif;
+  --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Transiciones */
+  --trans-fast: 180ms ease;
+  --trans-smooth: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Modo Día (Minimalista & Cálido) */
+html[data-theme="day"] {
+  --bg-dark: #F7F3EB;
+  --bg-header: rgba(247, 243, 235, 0.95);
+  --text-headline: #201713;
+  --text-sub: #5C4E46;
+  --text-muted: #8A7B72;
+}

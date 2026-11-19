@@ -1,0 +1,650 @@
+/* ==========================================================================
+   COSME ALBERDI — LINKTREE REPLACEMENT & PDF VIEWER STYLES
+   ========================================================================== */
+
+/* ---------- 1. SECCIÓN BIO HUB (REEMPLAZO LINKTREE) ---------- */
+.section-bio-hub {
+  position: relative;
+  padding: 60px 0 50px;
+  background: rgba(13, 14, 17, 0.75);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 10;
+}
+
+.bio-hub-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.bio-hub-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #D4CECA;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.bio-hub-pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--neon-red);
+  box-shadow: 0 0 10px var(--neon-red);
+  animation: pulse-dot 1.8s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.bio-hub-title {
+  font-family: var(--font-headline, var(--font-brand));
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.bio-hub-subtext {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  color: #B5ADA5;
+  line-height: 1.5;
+}
+
+/* ---------- 2. TARJETA DESTACADA DE EVENTOS (BARLEY FEST) ---------- */
+.bio-event-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: rgba(24, 24, 27, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.bio-event-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 30, 39, 0.6);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 30, 39, 0.35);
+}
+
+@media (min-width: 768px) {
+  .bio-event-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 32px;
+  }
+}
+
+.bio-event-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.bio-event-icon-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: rgba(255, 30, 39, 0.12);
+  border: 1px solid rgba(255, 30, 39, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.bio-event-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.bio-tag-online {
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: var(--neon-red);
+  color: #FFF;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.bio-event-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--neon-amber);
+}
+
+.bio-event-heading {
+  font-family: var(--font-headline, var(--font-brand));
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+.bio-event-desc {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: #CCC4BC;
+}
+
+.bio-event-cta {
+  margin-top: 16px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .bio-event-cta {
+    margin-top: 0;
+  }
+}
+
+.btn-buy-tickets {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 26px;
+  background: var(--neon-red);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-headline, var(--font-brand));
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(255, 30, 39, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .btn-buy-tickets {
+    width: auto;
+  }
+}
+
+.btn-buy-tickets:hover {
+  background: #D9121A;
+  box-shadow: 0 0 32px rgba(255, 30, 39, 0.85);
+  transform: scale(1.03);
+}
+
+/* ---------- 3. GRILLA DE PDFs Y MENÚS OFICIALES ---------- */
+.bio-hub-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+@media (min-width: 768px) {
+  .bio-hub-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.bio-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  background: rgba(24, 24, 27, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bio-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 30, 39, 0.5);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 30, 39, 0.3);
+}
+
+.bio-card.is-night {
+  border-left: 3px solid rgba(255, 30, 39, 0.5);
+}
+
+.bio-card.is-day {
+  border-left: 3px solid rgba(200, 109, 59, 0.6);
+}
+
+.bio-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.bio-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bio-card.is-night .bio-card-icon {
+  background: rgba(255, 30, 39, 0.12);
+  border-color: rgba(255, 30, 39, 0.3);
+  color: var(--neon-red);
+}
+
+.bio-card.is-day .bio-card-icon {
+  background: rgba(200, 109, 59, 0.15);
+  border-color: rgba(200, 109, 59, 0.35);
+  color: #E28854;
+}
+
+.bio-card-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #CCC;
+}
+
+.bio-card.is-night .bio-card-badge {
+  background: rgba(255, 30, 39, 0.15);
+  color: #FF7B80;
+}
+
+.bio-card.is-day .bio-card-badge {
+  background: rgba(200, 109, 59, 0.18);
+  color: #E28854;
+}
+
+.bio-card-title {
+  font-family: var(--font-headline, var(--font-brand));
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.bio-card-desc {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: #A8A098;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.bio-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-open-pdf {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-family: var(--font-headline, var(--font-brand));
+  font-size: 0.80rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bio-card.is-night .btn-open-pdf {
+  background: var(--neon-red);
+  box-shadow: 0 0 14px rgba(255, 30, 39, 0.45);
+}
+.bio-card.is-night .btn-open-pdf:hover {
+  background: #D9121A;
+  box-shadow: 0 0 24px rgba(255, 30, 39, 0.75);
+}
+
+/* Botón Terracota Armónico (Reemplazo del verde) */
+.bio-card.is-day .btn-open-pdf {
+  background: #C86D3B;
+  box-shadow: 0 0 14px rgba(200, 109, 59, 0.4);
+}
+.bio-card.is-day .btn-open-pdf:hover {
+  background: #B35C2C;
+  box-shadow: 0 0 24px rgba(200, 109, 59, 0.7);
+}
+  background: #1E664E;
+  box-shadow: 0 0 20px rgba(40, 128, 98, 0.6);
+}
+
+.btn-ext-drive {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #CCC;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.btn-ext-drive:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #FFF;
+}
+
+/* ---------- 4. FILA DE CONTACTOS DIRECTOS (WHATSAPP + DRIVE + IG) ---------- */
+.bio-quick-links-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+@media (min-width: 640px) {
+  .bio-quick-links-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.bio-link-pill-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(20, 21, 26, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.bio-link-pill-card:hover {
+  transform: translateY(-2px);
+  background: rgba(30, 31, 38, 0.95);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.bio-link-pill-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.bio-link-pill-card.wa .bio-link-pill-icon { background: rgba(37, 211, 102, 0.2); color: #25D366; }
+.bio-link-pill-card.wa:hover { border-color: #25D366; box-shadow: 0 0 15px rgba(37, 211, 102, 0.25); }
+
+.bio-link-pill-card.drive .bio-link-pill-icon { background: rgba(255, 170, 0, 0.2); color: #FFAA00; }
+.bio-link-pill-card.drive:hover { border-color: #FFAA00; box-shadow: 0 0 15px rgba(255, 170, 0, 0.25); }
+
+.bio-link-pill-card.ig .bio-link-pill-icon { background: rgba(225, 48, 108, 0.2); color: #E1306C; }
+.bio-link-pill-card.ig:hover { border-color: #E1306C; box-shadow: 0 0 15px rgba(225, 48, 108, 0.25); }
+
+.bio-link-pill-content span {
+  display: block;
+}
+.bio-link-pill-name {
+  font-family: var(--font-headline, var(--font-brand));
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.bio-link-pill-sub {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: #9E968E;
+}
+
+/* ---------- 5. MODAL INTERACTIVO DE PDF ---------- */
+.pdf-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pdf-modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pdf-modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 92vh;
+  max-height: 860px;
+  background: #141418;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(255, 30, 39, 0.2);
+  display: flex;
+  flex-direction: column;
+  transform: scale(0.96) translateY(10px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pdf-modal-backdrop.is-open .pdf-modal-container {
+  transform: scale(1) translateY(0);
+}
+
+.pdf-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #0E0F13;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.pdf-modal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pdf-modal-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255, 30, 39, 0.15);
+  border: 1px solid rgba(255, 30, 39, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.pdf-modal-title {
+  font-family: var(--font-headline, var(--font-brand));
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.pdf-modal-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #BBB;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.pdf-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-pdf-drive {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFF;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-pdf-drive:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.btn-pdf-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFF;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-pdf-close:hover {
+  background: var(--neon-red);
+  border-color: var(--neon-red);
+}
+
+.pdf-modal-body {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+.pdf-loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #888;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+.pdf-modal-body iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+}
+
+.pdf-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #0E0F13;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #8E867E;
+  flex-shrink: 0;
+}
+
+.pdf-download-text {
+  color: var(--neon-amber);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.pdf-download-text:hover {
+  text-decoration: underline;
+}
+
+/* Nav highlight link */
+.nav-bio-link {
+  color: var(--neon-red) !important;
+  font-weight: 800 !important;
+  text-shadow: 0 0 10px rgba(255, 30, 39, 0.4);
+}

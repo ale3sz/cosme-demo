@@ -1,0 +1,120 @@
+---
+import { Camera, MapPin, Sparkles, Flame, Music, Coffee } from '../ui/Icons';
+---
+
+<section id="el-lugar" class="scroll-mt-24 py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-surface-border">
+  <!-- Section Title & Subtitle -->
+  <div class="text-center max-w-3xl mx-auto mb-16">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-cosme-amber/10 text-cosme-amber border border-cosme-amber/20 mb-3">
+      <Camera className="w-3.5 h-3.5" />
+      Arquitectura Real & Ambiente
+    </div>
+    <h2 class="font-display text-3xl sm:text-5xl font-black tracking-tight uppercase text-textPrimary mb-4">
+      El Taller & El Club
+    </h2>
+    <p class="text-textSecondary text-base sm:text-lg">
+      Ladrillo a la vista original de Barrio Alberdi, hierro forjado, banquetas industriales y neones rojos que transforman la atmósfera cuando cae el sol en Rosario.
+    </p>
+  </div>
+
+  <!-- Bento Grid Container -->
+  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 auto-rows-[280px]">
+    <!-- Bento Tile 1: Large Feature - Barra Edison (Span 2 cols, 2 rows) -->
+    <div class="md:col-span-2 md:row-span-2 group relative rounded-3xl overflow-hidden bg-surface-card border border-surface-border shadow-xl">
+      <img
+        src="/assets/barra-edison.jpg"
+        alt="Barra rústica de Cosme Alberdi con banquetas de cuero y lámparas Edison"
+        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter contrast-110 brightness-90"
+        loading="lazy"
+        width="800"
+        height="600"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+      <div class="absolute top-4 left-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-black/60 backdrop-blur-md text-cosme-amber border border-white/10">
+          <Flame className="w-3.5 h-3.5" />
+          La Gran Barra
+        </span>
+      </div>
+      <div class="absolute bottom-6 left-6 right-6">
+        <h3 class="font-display text-2xl sm:text-3xl font-black text-white mb-2">
+          Lámparas Edison & Banquetas de Taller
+        </h3>
+        <p class="text-textSecondary text-xs sm:text-sm max-w-md line-clamp-2">
+          Madera noble maciza recuperada, 12 canillas de cerveza tirada artesanal y coctelería de autor servida al instante.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bento Tile 2: Salón Diurno (Span 1 col, 1 row) -->
+    <div class="group relative rounded-3xl overflow-hidden bg-surface-card border border-surface-border shadow-xl">
+      <img
+        src="/assets/salon-dia-tolix.jpg"
+        alt="Salón luminoso con sillas Tolix y ventanales"
+        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter contrast-110 brightness-90"
+        loading="lazy"
+        width="500"
+        height="350"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      <div class="absolute top-4 left-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-black/60 backdrop-blur-md text-cosme-mint border border-white/10">
+          <Coffee className="w-3.5 h-3.5" />
+          Luz Natural
+        </span>
+      </div>
+      <div class="absolute bottom-4 left-4 right-4">
+        <h4 class="font-display text-lg font-bold text-white">Salón Sillas Tolix</h4>
+        <p class="text-[11px] text-textSecondary font-mono">Espacio calmo para coworking & brunch</p>
+      </div>
+    </div>
+
+    <!-- Bento Tile 3: Cabina DJ & Noche (Span 1 col, 1 row) -->
+    <div class="group relative rounded-3xl overflow-hidden bg-surface-card border border-surface-border shadow-xl">
+      <img
+        src="/assets/dj-pioneer-vhs.jpg"
+        alt="Cabina de DJ en vivo Pioneer CDJ con luces rojas"
+        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter contrast-115 brightness-90"
+        loading="lazy"
+        width="500"
+        height="350"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      <div class="absolute top-4 left-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-black/60 backdrop-blur-md text-cosme-red border border-white/10">
+          <Music className="w-3.5 h-3.5" />
+          DJ Set Live
+        </span>
+      </div>
+      <div class="absolute bottom-4 left-4 right-4">
+        <h4 class="font-display text-lg font-bold text-white">Fiestas Retro 90s</h4>
+        <p class="text-[11px] text-textSecondary font-mono">Pioneer CDJ & pista con cotillón</p>
+      </div>
+    </div>
+
+    <!-- Bento Tile 4: Mural de la Mascota (Span 2 cols, 1 row) -->
+    <div class="md:col-span-2 group relative rounded-3xl overflow-hidden bg-surface-card border border-surface-border shadow-xl">
+      <img
+        src="/assets/neon-mascota-mural.jpg"
+        alt="Mural callejero de la mascota Cosme iluminada con apliques industriales"
+        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter contrast-110 brightness-90"
+        loading="lazy"
+        width="800"
+        height="400"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      <div class="absolute top-4 left-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-black/60 backdrop-blur-md text-[#F5B727] border border-white/10">
+          <Sparkles className="w-3.5 h-3.5" />
+          Identidad Cosme
+        </span>
+      </div>
+      <div class="absolute bottom-5 left-6 right-6 flex items-end justify-between">
+        <div>
+          <h4 class="font-display text-xl font-black text-white">El Ícono de Alberdi</h4>
+          <p class="text-xs text-textSecondary">Gorra snapback, gafas zigzag y la barba de flor de lúpulo que nos define.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

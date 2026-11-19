@@ -1,0 +1,22 @@
+---
+import { MenuTabs } from '../interactive/MenuTabs';
+import { Utensils, Sparkles } from '../ui/Icons';
+---
+
+<section id="menu-interactivo" class="scroll-mt-24 py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-surface-border">
+  <div class="text-center max-w-3xl mx-auto mb-14">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-cosme-red/10 text-cosme-red border border-cosme-red/20 mb-3">
+      <Utensils className="w-3.5 h-3.5" />
+      Carta Dual Interactiva
+    </div>
+    <h2 class="font-display text-3xl sm:text-5xl font-black tracking-tight uppercase text-textPrimary mb-4">
+      De las Torres de Merienda a la Cascada de Cheddar
+    </h2>
+    <p class="text-textSecondary text-base sm:text-lg">
+      Elegí tu momento del día: alterná de pestaña para recorrer la propuesta artesanal de cafetería matutina o la carta nocturna de comida libre y cervecería.
+    </p>
+  </div>
+
+  <!-- Interactive Menu Tabs Island (Hydrated on visibility for 100/100 Core Web Vitals) -->
+  <MenuTabs client:visible />
+</section>

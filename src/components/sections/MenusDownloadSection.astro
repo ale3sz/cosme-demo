@@ -1,0 +1,124 @@
+---
+import { FileText, QrCode, Download, ExternalLink, Sparkles, Coffee, Beer } from '../ui/Icons';
+---
+
+<section id="cartas-pdf" class="scroll-mt-24 py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-surface-border">
+  <div class="text-center max-w-3xl mx-auto mb-16">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-cosme-amber/10 text-cosme-amber border border-cosme-amber/20 mb-3">
+      <FileText className="w-3.5 h-3.5" />
+      Portamenús de Madera
+    </div>
+    <h2 class="font-display text-3xl sm:text-5xl font-black tracking-tight uppercase text-textPrimary mb-4">
+      Descargá las Cartas Oficiales
+    </h2>
+    <p class="text-textSecondary text-base sm:text-lg">
+      Llevate el menú completo a tu celular o escaneá el código QR en la mesa para ver los precios actualizados, opciones para celíacos y promociones del día.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Card 1: Carta Noche -->
+    <div class="rounded-3xl bg-surface-card border border-surface-border p-8 flex flex-col justify-between hover:border-cosme-red/50 transition-all duration-300 shadow-xl group">
+      <div>
+        <div class="w-12 h-12 rounded-2xl bg-cosme-red/10 border border-cosme-red/20 flex items-center justify-center text-cosme-red mb-6 group-hover:scale-110 transition-transform">
+          <Beer className="w-6 h-6" />
+        </div>
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-cosme-red">
+          Carta Nocturna
+        </span>
+        <h3 class="font-display text-2xl font-black text-textPrimary mt-2 mb-3">
+          Comida Libre, Birra & Coctelería
+        </h3>
+        <p class="text-sm text-textSecondary leading-relaxed mb-6">
+          Hamburguesas smash con cascada cheddar, milanesa libre en torre,Carlitos de vacío, 12 canillas artesanales y tragos de autor.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-2 pt-2">
+        <a
+          href="https://drive.google.com/file/d/1r6Pmaf6tBvK8j-wzST7jegs-poxu5HXt/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-between flex-1 py-3.5 px-5 rounded-xl font-display font-bold text-xs uppercase tracking-wider text-white bg-cosme-red hover:bg-cosme-redDark shadow-[0_0_20px_rgba(255,30,39,0.3)] transition-all"
+        >
+          <span>Abrir Carta PDF</span>
+          <ExternalLink className="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 2: Carta Día -->
+    <div class="rounded-3xl bg-surface-card border border-surface-border p-8 flex flex-col justify-between hover:border-cosme-hop/50 transition-all duration-300 shadow-xl group">
+      <div>
+        <div class="w-12 h-12 rounded-2xl bg-cosme-hop/10 border border-cosme-hop/20 flex items-center justify-center text-cosme-hop mb-6 group-hover:scale-110 transition-transform">
+          <Coffee className="w-6 h-6" />
+        </div>
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-cosme-hop">
+          Carta Diurna
+        </span>
+        <h3 class="font-display text-2xl font-black text-textPrimary mt-2 mb-3">
+          Café de Especialidad & Brunch
+        </h3>
+        <p class="text-sm text-textSecondary leading-relaxed mb-6">
+          Torres de merienda de 3 pisos, café de origen, tostones de masa madre, pastelería del día y menús ejecutivos semanales.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-2 pt-2">
+        <a
+          href="https://drive.google.com/file/d/1X0_n1wfn8lNFb6mAV4BZjV-Zevl-YU_N/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-between flex-1 py-3.5 px-5 rounded-xl font-display font-bold text-xs uppercase tracking-wider text-white bg-cosme-hop hover:bg-emerald-800 shadow-[0_0_20px_rgba(40,128,98,0.3)] transition-all"
+        >
+          <span>Abrir Carta PDF</span>
+          <ExternalLink className="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 3: QR Directo a la Mesa -->
+    <div class="rounded-3xl bg-gradient-to-b from-[#1C1819] to-surface-card border border-surface-border p-8 flex flex-col items-center justify-between text-center hover:border-cosme-amber/50 transition-all duration-300 shadow-xl group">
+      <div>
+        <div class="w-12 h-12 rounded-2xl bg-cosme-amber/10 border border-cosme-amber/20 flex items-center justify-center text-cosme-amber mb-6 mx-auto group-hover:scale-110 transition-transform">
+          <QrCode className="w-6 h-6" />
+        </div>
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-cosme-amber">
+          Acceso Express Móvil
+        </span>
+        <h3 class="font-display text-2xl font-black text-textPrimary mt-2 mb-3">
+          Escaneá con tu Celular
+        </h3>
+        <p class="text-sm text-textSecondary leading-relaxed mb-6">
+          Disponible en cada mesa de madera y en la barra de Bv. Rondeau.
+        </p>
+      </div>
+
+      <!-- QR Visual Mockup -->
+      <a 
+        href="https://drive.google.com/drive/folders/1nQJKftaSDtPjgDU_UEiqetQnh72M2eEz" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="w-24 h-24 rounded-2xl bg-white p-2 shadow-2xl flex items-center justify-center border border-white/20 mb-3 group-hover:scale-105 transition-transform"
+      >
+        <img 
+          src="/qr_celular.png" 
+          alt="Código QR para ver el menú de Cosme Alberdi en el celular" 
+          class="w-full h-full object-contain"
+          width="88"
+          height="88"
+        />
+      </a>
+
+      <a
+        href="https://drive.google.com/drive/folders/1nQJKftaSDtPjgDU_UEiqetQnh72M2eEz"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-xl font-display font-bold text-xs uppercase tracking-wider text-black bg-[#FFAA00] hover:bg-[#D98200] shadow-[0_0_20px_rgba(255,170,0,0.3)] transition-all"
+      >
+        <span>Abrir Drive Oficial</span>
+        <ExternalLink className="w-4 h-4" />
+      </a>
+    </div>
+  </div>
+</section>

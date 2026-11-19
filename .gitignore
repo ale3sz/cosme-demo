@@ -1,0 +1,18 @@
+# Dependencies & build
+node_modules/
+.astro/
+dist/
+
+# Local binaries & preview tunnels
+*.exe
+mobile_preview_url.txt
+
+# QA / temporary screenshots & backups
+audit_results/
+audit_screenshots/
+test_*.png
+*.bak
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc

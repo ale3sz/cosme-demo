@@ -1,0 +1,114 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Cosme Alberdi — Café de Especialidad, Gastrobar & Club Nocturno | Rosario",
+  description = "Cosme Alberdi en Boulevard Rondeau 1602, Rosario. Café de especialidad y brunch de día; neón rojo, cervecería artesanal, hamburguesas con cascada de cheddar y fiestas retro de noche.",
+  image = "/assets/cartel-neon-ladrillo.jpg",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://cosmealberdi.com.ar");
+---
+
+<!doctype html>
+<html lang="es" data-theme="night">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" id="theme-color-meta" content="#0B0B0D" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B0B0D'/%3E%3Cpath d='M14 22c0-9 8-14 18-14s18 5 18 14H14Z' fill='none' stroke='%23FF1E27' stroke-width='3'/%3E%3Crect x='17' y='26' width='12' height='8' rx='2' fill='none' stroke='%23FFAA00' stroke-width='2.6'/%3E%3Crect x='35' y='26' width='12' height='8' rx='2' fill='none' stroke='%23FFAA00' stroke-width='2.6'/%3E%3Cpath d='M21 40c4 10 11 16 11 16s7-6 11-16' fill='none' stroke='%23FFAA00' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Cosme Alberdi, restaurante Rosario, bar Alberdi, café de especialidad Rosario, cervecería Rosario, hamburguesas cheddar, cumpleaños Rosario, fiesta retro" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=Syne:wght@700;800&family=VT323&display=swap" 
+      rel="stylesheet" 
+    />
+
+    <!-- Schema.org JSON-LD Structured Data for Local Restaurant / Cafe / Bar -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Cosme Alberdi",
+        "image": "https://cosmealberdi.com.ar/assets/cartel-neon-ladrillo.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bv. Rondeau 1602",
+          "addressLocality": "Rosario",
+          "addressRegion": "Santa Fe",
+          "postalCode": "S2000",
+          "addressCountry": "AR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -32.8988,
+          "longitude": -60.6908
+        },
+        "url": "https://cosmealberdi.com.ar",
+        "telephone": "+5493416802275",
+        "servesCuisine": ["Cafetería de Especialidad", "Cervecería Artesanal", "Hamburguesería", "Parrilla"],
+        "priceRange": "$$",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "08:00",
+            "closes": "02:00"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="min-h-screen bg-canvas-dark text-textPrimary selection:bg-cosme-red selection:text-white">
+    <!-- Accessible Skip Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:py-2 focus:px-4 focus:bg-cosme-red focus:text-white focus:rounded-lg">
+      Saltar al contenido principal
+    </a>
+
+    <!-- Subtle Grain Noise Texture -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <slot />
+
+    <!-- Theme synchronization script -->
+    <script is:inline>
+      const savedTheme = localStorage.getItem('cosme-theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        const meta = document.getElementById('theme-color-meta');
+        if (meta) {
+          meta.setAttribute('content', savedTheme === 'night' ? '#0B0B0D' : '#F7F3EB');
+        }
+      }
+    </script>
+  </body>
+</html>
